@@ -45,12 +45,37 @@ På figur \ref{fig:Aktoer Kontekst diagram} ses aktør kontekst diagrammet som b
 På figur \ref{fig:Usecase diagram} ses usecase diagrammet som beskriver sammenhængen mellem aktørerne og de forskellige funktionaliteter der findes for systemet.
 
 \subsubsection{UC 1 - Turn on filter}
-Denne use case danner ramme for, at opfylde magasinet installeret på BFG. Brugeren interagerer med systemet, når han fylder magasinet. Brugeren får besked når magasinet er tomt, herefter åbnes og og genfyldes magasinet. Når brugeren har fyldt magasinet, godkender brugeren på GUI'en. Herefter lukker magasinet og genlader. 
+\begin{enumerate}
+\item Mål: LMS filteret aktiveres
+
+\item Initiering: Bruger
+
+\item Aktøre: bruger
+
+\item Prækondition: Systemet har strøm og er ikke tændt
+
+\item Postkondition: Filteret er aktivt
+
+\item Brugeren trykker på SW1 og filteret aktiveres
+
+
 
 \subsubsection{UC 2 - Turn off filter}
-Denne use case danner ramme for manual styring af BFG. Brugeren interagere med systemet, når der trykkes på en retning i GUI'en. Brugeren har derudover mulighed for at affyre et projektil ved brug af "Skyd!"-knappen i GUI'en.  
+
+\item Mål: LMS filteret deaktiveres
+
+\item Initiering: Bruger
+
+\item Aktøre: bruger
+
+\item Prækondition: Systemet har strøm og er tændt
+
+\item Postkondition: Filteret er ikke aktivt
+
+\item Brugeren trykker på SW1 og filteret deaktiveres
 
 
+\end{enumerate}
 
 \newpage
 \section{Ikke-funktionelle krav}

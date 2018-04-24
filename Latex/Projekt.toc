@@ -1,0 +1,13 @@
+\babel@toc {danish}{}
+\contentsline {section}{\numberline {1}Indledning}{3}{section.1}
+\contentsline {section}{\numberline {2}Teori}{4}{section.2}
+\contentsline {section}{\numberline {3}Krav}{5}{section.3}
+\contentsline {section}{\numberline {4}Akt\IeC {\o }rbeskrivelse}{5}{section.4}
+\contentsline {section}{\numberline {5}Use case beskrivelse}{6}{section.5}
+\contentsline {subsubsection}{\numberline {5.0.1}UC 1 - Turn on filter}{6}{subsubsection.5.0.1}
+\contentsline {subsubsection}{\numberline {5.0.2}UC 2 - Turn off filter}{6}{subsubsection.5.0.2}
+\contentsline {section}{\numberline {6}Ikke-funktionelle krav}{8}{section.6}
+\contentsline {subsection}{\numberline {6.1}Problemrelateret krav}{8}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}System og algoritme krav}{8}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Afledte krav}{8}{subsection.6.3}
+\contentsline {section}{\numberline {7}Acceptest}{8}{section.7}
