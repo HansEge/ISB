@@ -4,47 +4,28 @@
 
 \chapter{Indledning}
 
-Nerf guns - legetøjet, der skyder med små skumpile, kommer i alle former og størrelser fra håndholdte pistoler til fuldautomatiske geværer. Der er dog, så vidt gruppen har undersøgt, endnu ikke markedsført en nerf-udgave af en sentry gun. Produktet Big Friendly Gun (BFG) er derfor en automatiseret nerf sentry gun, som automatisk kan sigte efter en brugerbestemt farve, ved hjælp af et intern kamara. Af sikkerhedsmæssige årsager affyrer den ikke skud autonomt, hvorimod brugeren via fjernstyring fra en tilhørende PC-app skal bede om at affyre skud. Udover automatisk at sigte efter farver, vil det også være muligt manuelt at fjernstyre kanonen via PC-appen.
-
-Nedenfor, på figur \ref{fig:rigt_billede} ses et overblik over systemets funktionalitet, med et konceptbillede.
+Under optagelse til et live madprogram, sker det ofte at værten skal bruge en blender/foodprocesser. Dette betyder at værten ikke kan kommunikere med seerne mens blenderen/foodprocesseren kører. Denne problematik vil Noise Suppression System (DSS) kunne afhjælpe. Gennem en digital signal prossesering (DSP), vil vi dæmpe støjsignalet fra en køkkenmaskine dynamisk i realtid. Systemet består af to mikrofoner, et placeres tæt på støjen, et andet tæt på værten. De to mikrofoner fungere som input til vores system (Blackfin), hvor procceseringen og filtreringen foregår. Efter proceseringen bliver produktet afspillet på en højtaler, som i en madprogram vil foregår på udgangen af seerens fjernsyn. Et overblik over systemet kan ses på figur \ref{fig:konceptbillede}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width = 400pt]{Img/Konceptbillede}
-	\caption{Konceptbillede for BFG}
-	\label{fig:rigt_billede}
+	\caption{Konceptbillede for DSS}
+	\label{fig:konceptbillede}
 \end{figure}
 
-Med udgangspunkt i brugerens behov vil der blive opstillet en række brugsscenarier, der beskriver brugerens interaktion med systemet. Disse scenarier vil sammen med en række veldefinerede krav og afgrænsninger, danne grundlaget for designet af alle dele af systemet. I selve designfasen vil systemet blive opdelt i mindre dele, kaldet moduler, for at lette overskueligheden og gøre systemet mere fleksibelt og skalerbart.  \\ 
+Med udgangspunkt i brugerens behov vil der blive opstillet en række brugsscenarier, der beskriver brugerens interaktion med systemet. Disse scenarier vil sammen med en række veldefinerede krav og afgrænsninger, danne grundlaget for designet af alle dele af systemet.  \\ 
 
 \newpage
 
+\section{Teori}
+I procceseringsfasen af projektet, har vi valgt at bruge et adaptivt filter - LMS (Least Mean square) algoritme. Et adaptivt filter består af 2 funktionelle blokke, hvor den ene blok fungerer som et filter, fra dynamiske kofficienter som bliver opdateret LMS blokken.  Filteret trækker herefter de beregnede filter fra det samlede lydsignal. 
+   
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/Figures}
+	\caption{LMS adaptive filter}
+	\label{fig:LMS_filter}
+\end{figure}
 
-
-
-
-\section{Læsevejledning}
-
-Denne sektion har til formål at give et kort overblik over hvad rapporten indeholder, og hvor man kan læse om de forskellige dele:
-
-\textbf{Kapitel 1-7} vil give en overordnet præsentation af produktet for dette semesterprojekt. Yderligere vil man kunne læse om funktionaliteten og formålet med produktet, samt hvad produktet overordnet består af. 
-
-\textbf{Kapitel 8} vil give et overblik over de forskellige moduler og deres overordnede funktionalitet, som til sammen danner BFG og dermed hele systemet.
-
-\textbf{Kapitel 9} danner overblik over de forskellige kommunikationsprotokoller der bliver brugt i BFG. Yderligere bliver der begrundet for de valgte kommunikatonsprotokoller.
-
-\textbf{Kapitel 10} beskriver PC-App modulets funktionalitet og overvejelser om dette. Dette inkluderer også overvejelser om design og beskrivelse af implementeringen for PC-Appen og alt der hører under dets modul.
-
-\textbf{Kapitel 11} beskriver drejemodulet og dets funktionalitet. Yderligere forklarer afsnittet om overvejelser angående modulet samt design og implementeringsfasen. 
-
-\textbf{Kapitel 12} danner overblik over kontrolmodulet og dets funktionalitet. Desuden beskriver kapitlet kommunikationsprotokollerne og billedeprocesseringen som er implementeret.
-
-\textbf{Kapitel 13} giver indsigt i affyringsmodulet og overvejelse om forskellige ting som indgår i modulet. 
-
-\textbf{Kapitel 14} giver et kort indblik i overvejelser om EMC i BFG.
-
-\textbf{Kapitel 15} beskriver systemets integrationstest.
-
-\textbf{Kapitel 16-17} fungerer som en afrunding på denne rapport. Her bliver der præsenteret et resultat, samt en diskussion om denne, hvorefter der følger en endelig konklusion på semesterprojektet og dets rapport.
-
+På figur \ref{fig:LMS_filter} ses et overblik over det adative system, hvor x(n) er støjsignalet, y(n) er det filtrede støjsignal, med koefficienter som opdateres fra blokken "Adaptive Algoritm". d(n) er det ønskede signal inklusiv det støjende signal. e(n) er forskellen mellem d(n) og y(n) og derved støjen fratrukket fra det samlede signal af ønsket og støj.  
