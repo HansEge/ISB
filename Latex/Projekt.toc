@@ -1,7 +1,11 @@
-\select@language {danish}
-\contentsline {section}{\numberline {1}Akt\IeC {\o }rbeskrivelse}{3}{section.1}
-\contentsline {section}{\numberline {2}Use case beskrivelse}{4}{section.2}
-\contentsline {subsubsection}{\numberline {2.0.1}UC 1 - Turn on filter}{4}{subsubsection.2.0.1}
-\contentsline {subsubsection}{\numberline {2.0.2}UC 2 - Turn off filter}{4}{subsubsection.2.0.2}
-\contentsline {section}{\numberline {3}Ikke-funktionelle krav}{5}{section.3}
-\contentsline {section}{\numberline {4}Acceptest}{5}{section.4}
+\babel@toc {danish}{}
+\contentsline {section}{\numberline {1}Krav}{3}{section.1}
+\contentsline {section}{\numberline {2}Akt\IeC {\o }rbeskrivelse}{3}{section.2}
+\contentsline {section}{\numberline {3}Use case beskrivelse}{4}{section.3}
+\contentsline {subsubsection}{\numberline {3.0.1}UC 1 - Turn on filter}{4}{subsubsection.3.0.1}
+\contentsline {subsubsection}{\numberline {3.0.2}UC 2 - Turn off filter}{4}{subsubsection.3.0.2}
+\contentsline {section}{\numberline {4}Ikke-funktionelle krav}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}Problemrelateret krav}{5}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}System og algoritme krav}{5}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Afledte krav}{5}{subsection.4.3}
+\contentsline {section}{\numberline {5}Acceptest}{5}{section.5}

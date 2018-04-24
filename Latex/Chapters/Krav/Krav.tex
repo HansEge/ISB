@@ -3,6 +3,7 @@
 %-------------------------------------------------------------------------------
 
 \chapter{Krav}
+\section{Krav}
 I dette afsnit beskrives kravene til hvilken funktionalitet systemet har. 
 
 
@@ -53,32 +54,41 @@ Denne use case danner ramme for manual styring af BFG. Brugeren interagere med s
 
 \newpage
 \section{Ikke-funktionelle krav}
-Der er formuleret 12 ikke-funktionelle krav, som beskriver krav til selve systemets specifikation, ydeevne og kvaliteter. Disse kan alle måles eller visuelt observeres.
+Kravene er delt op i tre underkategorier. Krav der relaterer til problemet. krav der relaterer til DSP platform og algoritme. Til sidst er der en kategori der beskriver kravene til systemet på baggrund af de to første kategorier.
 \begin{enumerate}
-	\item Systemet skal have 2 mikrofoner og 1 højtaler
 	
-	\item Filteret skal gøre brug af LMS algoritmen
+	\subsection{Problemrelateret krav}
+	\item R1: Systemet skal have 2 mikrofoner og 1 højtaler
 	
-	\item Drejemekanismen skal kunne dreje horisontalt $\pm90^\circ$ om sin egen akse.
+	\item R2: Filteret skal gøre brug af LMS algoritmen
 	
-	\item Drejemekanismen skal kunne dreje minimum $5^\circ$ per sekund i horisontalt retning
+	\item R3: Systemet skal kunne processerer lyd i frekvensbåndet 50-20000Hz. 
 	
-	\item Affyringsmekanismen skal kunne skyde minimum 10 meter.
+	\item R4: Systemet skal kunne dæmpe uønkset støj 30dB.
 	
-	\item Affyringsmekanismen skal kunne skyde minimum 2 gange i minuttet.
+	\item R5: Systemet skal kunne dæmpe støj uden at dæmpe ønsket lydsignal.
 	
-	\item Affyringsmekanismen skal have mulighed for præcis 6 projektiler i sit magasin af gangen.
+	\item R6: Systemet burde have en latency under 30ms.
 	
-	\item Affyringsmekanismen med stativ skal være minimum 1 meter og maximum 2 meter høj.
+	\item R7: Systemet burde have et dynamikområde på min 96dB
 	
-	\item Systemet skal gøre brug af pålidelig transmission mellem PC og selve affyringsmekanismen.
+	\subsection{System og algoritme krav}
 	
-	\item Systemet skal have en brugergrænseflade på en PC med en mus/joystick/tastatur tilkoblet.
+	\item R7: Filter algoritmen skal implementeres med fixed point 
+	
+	\item R8: Filteret skal max bruge 10kByte memory
+	
+	\item R9: Filteret skal implementeres på Blackfin BF533
+	
+	\item R10: Filteret må max benytte 98\% DSP load
+
+	\subsection{Afledte krav}
+	
+	\item DR1: DSP systemet skal kunne håndtere en samplingsrate på min 44100kHz(På baggrund af krav R3) 
+	
+	\item DR2: 
 	
 	
-	\item Systemet skal kunne registrere og sigte automatisk efter objekter med én følgende farver: grøn, rød og blå.
-	
-	\item Systemets affyringsmekanisme skal køre på et batteri, som skal kunne holde til minimum 10 skud.
 \end{enumerate}
 
 
