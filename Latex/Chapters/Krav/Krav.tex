@@ -74,20 +74,23 @@ Kravene er delt op i tre underkategorier. Krav der relaterer til problemet. krav
 	
 	\subsection{System og algoritme krav}
 	
-	\item R7: Filter algoritmen skal implementeres med fixed point 
+	\item R8: Filter algoritmen skal implementeres med fixed point 
 	
-	\item R8: Filteret skal max bruge 10kByte memory
+	\item R9: Filteret skal max bruge 10kByte memory
 	
-	\item R9: Filteret skal implementeres på Blackfin BF533
+	\item R10: Filteret skal implementeres på Blackfin BF533
 	
-	\item R10: Filteret må max benytte 98\% DSP load
+	\item R11: Filteret må max benytte 98\% DSP load
 
 	\subsection{Afledte krav}
 	
 	\item DR1: DSP systemet skal kunne håndtere en samplingsrate på min 44100kHz(På baggrund af krav R3) 
 	
-	\item DR2: 
+	\item DR2: Filteret skal implementeres med 1.15 fixed point.(På baggrund af krav R7 og R8. Dette giver et dynamikområde på 96dB)
 	
+	\item DR3: Filter latency må max forsinkes 1280 samples(På baggrund af R6. (1/44100)*1280=30ms)
+	
+	\item Filteret må max bruge 13333 cycles af DSP processering for hver sample. 
 	
 \end{enumerate}
 
