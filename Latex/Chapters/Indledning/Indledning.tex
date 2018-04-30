@@ -17,15 +17,3 @@ Med udgangspunkt i brugerens behov vil der blive opstillet en række brugsscenar
 
 \newpage
 
-\section{Teori}
-I procceseringsfasen af projektet, har vi valgt at bruge et adaptivt filter - LMS (Least Mean square) algoritme. Et adaptivt filter består af 2 funktionelle blokke, hvor den ene blok fungerer som et filter, fra dynamiske kofficienter som bliver opdateret LMS blokken.  Filteret trækker herefter de beregnede filter fra det samlede lydsignal. 
-   
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width = 400pt]{Img/Figures}
-	\caption{LMS adaptive filter}
-	\label{fig:LMS_filter}
-\end{figure}
-
-På figur \ref{fig:LMS_filter} ses et overblik over det adative system, hvor x(n) er støjsignalet, y(n) er det filtrede støjsignal, med koefficienter som opdateres fra blokken "Adaptive Algoritm". d(n) er det ønskede signal inklusiv det støjende signal. e(n) er forskellen mellem d(n) og y(n) og derved støjen fratrukket fra det samlede signal af ønsket og støj.  
