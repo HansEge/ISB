@@ -4,6 +4,8 @@
 
 \documentclass[12pt]{article}
 \usepackage[danish]{babel}
+\usepackage{mathtools}
+\usepackage[euler]{textgreek}
 \usepackage[numbered,final]{mcode}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
@@ -14,7 +16,7 @@
 \usepackage{floatrow} % used for adding "Source" to pictures
 \usepackage{hyperref} % used for hyperlinks
 \usepackage[all]{hypcap}
-\usepackage{bm} % used for bold inline matj
+ \usepackage{bm} % used for bold inline matj
 \usepackage{lipsum} % used for lorem lipsum
 \usepackage[final]{pdfpages} % used for including PDF's
 \usepackage{geometry}
@@ -28,7 +30,6 @@
 
 % Page margins
 \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headsep=0.35in}
-
 
 \begin{document}
 	
@@ -100,9 +101,12 @@
 
 \hypersetup{linkcolor=blue}
 
+
+
 \include{Chapters/Indledning/Indledning}
 \include{Chapters/Krav/Krav}
-
+\include{Chapters/Struktur/Struktur}
+\include{Chapters/Teori/Teori}
 \begin{flushleft}
 	
 \end{flushleft}
