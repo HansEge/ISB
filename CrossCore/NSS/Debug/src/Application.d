@@ -31,18 +31,8 @@ src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\
 src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/anomaly_macros_rtl.h
 src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sysreg.h
 src/Application.doj: ../src/Controller.h
-src/Application.doj: ../src/DynamicFilter.h
-src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/filter.h
-src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/complex.h
-src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/builtins.h
-src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/builtins_support.h
-src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/cycles.h
-src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/xcycle_count.h
-src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/cycle_count_bf.h
-src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/limits.h
-src/Application.doj: ../src/Algorithm.h
-src/Application.doj: ../src/IIRFilter.h
+src/Application.doj: ../src/LMSFilter.h
 src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/stdfix.h
 src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/stdfix_limits.h
 src/Application.doj: ../../../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/stdfix_io.h
-src/Application.doj: ../src/AlgoTester.h
+src/Application.doj: ../src/Algorithm.h

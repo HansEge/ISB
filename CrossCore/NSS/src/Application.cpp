@@ -13,25 +13,25 @@
 #include "ccblkfn.h" //definition of built-in function
 					 //  in this program:sysreg_write()
 #include "Controller.h"
-#include "AlgoTester.h"
-#include "DynamicFilter.h"
+//#include "AlgoTester.h"
+#include "LMSFilter.h"
 
 // Initialization of sample block processing inputs
-void InitProcess(Algorithm *left, Algorithm *right);
+void InitProcess(Algorithm *algo);
 // Initialization of control for switch inputs
 void InitSwitch(Controller *left, Controller *right);
 
 // Instance of dummy algorithm for left and right stereo channels
-DynamicFilter FilterLeft(SAMPLE_FS);
+LMSFilter Filter;
 
 // Instance of controller left and right
-Controller CtrlLeft(&FilterLeft);
+Controller CtrlLeft(&Filter);
 
 void InitAlgoProcess(void)
 {
 	// Initialization of boundary interfaces (interrupts)
-	FilterLeft.create();
-	InitProcess(&FilterLeft, NULL);
+	Filter.create();
+	InitProcess(&Filter);
 	InitSwitch(&CtrlLeft, NULL);
 }
 
@@ -55,9 +55,9 @@ void main(void)
 
 #if 1 // TODO Set to 1 for testing
 	InitAlgoProcess(); // Initialization of processing algorithms
-	FilterLeft.updateDynFilter();
-	AlgoTester algoTest(&FilterLeft);
-	algoTest.runTestDyn("..\\src\\x_signal.txt", "..\\src\\y_signal.txt", "..\\src\\fft_mag.txt");
+	//FilterLeft.updateDynFilter();
+	//AlgoTester algoTest(&FilterLeft);
+	//algoTest.runTestDyn("..\\src\\x_signal.txt", "..\\src\\y_signal.txt", "..\\src\\fft_mag.txt");
 #else
 	InitSystemHardware(); // Initialization of BF533
 	InitAlgoProcess(); // Initialization of processing algorithms
@@ -70,6 +70,5 @@ void main(void)
 	{
 		// TODO insert background processing code as necessary
 		// Updates notch filter if new FFT amplitude peak was found
-		FilterLeft.updateDynFilter();
 	}; // wait forever
 }

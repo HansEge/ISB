@@ -7,13 +7,11 @@
 #include "HAL.h"
 #include "Algorithm.h"
 
-Algorithm *pAlgoLeft = 0;
-Algorithm *pAlgoRight = 0;
+Algorithm *pAlgo = 0;
 
-void InitProcess(Algorithm *left, Algorithm *right)
+void InitProcess(Algorithm *algo)
 {
-	pAlgoLeft = left;
-	pAlgoRight = right;
+	pAlgo = algo;
 }
 
 extern "C" {
@@ -30,8 +28,8 @@ extern "C" {
 		}
 		*/
 
-		if (pAlgoLeft) pAlgoLeft->process(sCh0LeftIn, sCh0LeftOut, INPUT_SIZE);
-		if (pAlgoRight) pAlgoRight->process(sCh0RightIn, sCh0RightOut, INPUT_SIZE);
+		if (pAlgo) pAlgo->process(sCh0LeftIn, sCh0RightIn, sCh0LeftOut, INPUT_SIZE);
+		//if (pAlgoRight) pAlgoRight->process(sCh0RightIn, sCh0RightOut, INPUT_SIZE);
 	
 	}
 

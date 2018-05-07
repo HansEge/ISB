@@ -15,7 +15,8 @@ public:
 	Algorithm();
 	virtual ~Algorithm();
 
-	virtual void process(short* input, short* output, short len) = 0;
+	//virtual void process(short* ínput, short* output, short len) = 0;
+	virtual void process(short* inLeft, short* inRight, short* output, short len) = 0;
 	virtual void create(void) = 0;
 
 };

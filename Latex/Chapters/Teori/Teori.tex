@@ -23,6 +23,7 @@ Det digitale filter bliver beregnet ud fra formlen:
   y(n) = \displaystyle\sum_{l=0}^{L-1} W(n)*x(n-1)
 \end{equation}
 Hvor W(n) er den værdi, som dynamisk opdateres. Dette sker ved at vi beregner den næste værdi ud fra formlen: 
+
 \begin{equation}
   W(n+1) = W(n)-\mu *X(n)*e(n)
 \end{equation}

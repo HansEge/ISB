@@ -8,15 +8,15 @@
 #if !defined(CONTROLLER__INCLUDED_)
 #define CONTROLLER__INCLUDED_
 
-#include "DynamicFilter.h"
 #include "HAL.h"
+#include "LMSFilter.h"
 
 class Controller
 {
 
 public:
 
-	Controller(DynamicFilter *dyn);
+	Controller(LMSFilter *lms);
 	virtual ~Controller();
 
 	void incParamValue();
@@ -25,7 +25,7 @@ public:
 
 protected:
     void updateUI();
-	DynamicFilter *m_dyn;
+	LMSFilter *m_lms;
 	short m_parVal;
 };
 

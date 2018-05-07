@@ -7,9 +7,9 @@
 
 #include "Controller.h"
 
-Controller::Controller(DynamicFilter *dyn) : m_parVal(0)
+Controller::Controller(LMSFilter *lms) : m_parVal(0)
 {
-	m_dyn = dyn;
+	m_lms = lms;
 }
 
 Controller::~Controller()
