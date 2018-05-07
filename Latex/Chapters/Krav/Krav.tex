@@ -28,10 +28,13 @@ med alle use cases og hvordan aktørerne interagerer med dem. Til sidst gives et
 	\label{fig:Aktoer Kontekst diagram}
 \end{figure}
 
-På figur \ref{fig:Aktoer Kontekst diagram} ses aktør kontekst diagrammet som beskriver sammenhængen mellem aktøren og det system den interagere med. Aktøren er som følger: \\*
-
+På figur \ref{fig:Aktoer Kontekst diagram} ses aktør kontekst diagrammet som beskriver sammenhængen mellem aktørene og det system de interagere med. Aktørene er som følger: \\*
+\textbf{Primær}\\
 \textbf{Bruger:} Den aktør der interagerer med systemet og vælger den ønskede funktionalitet \\
-
+\textbf{Recording system:} Den aktør der modtager det enedelige produkt\\
+\textbf{Sekundær}\\
+\textbf{Mic støj:} Et input til det samlede system\\
+\textbf{Mic tale+støj:} Et input til det samlede system \\
 
 \section{Use case beskrivelse}
 
@@ -45,37 +48,17 @@ På figur \ref{fig:Aktoer Kontekst diagram} ses aktør kontekst diagrammet som b
 På figur \ref{fig:Usecase diagram} ses usecase diagrammet som beskriver sammenhængen mellem aktørerne og de forskellige funktionaliteter der findes for systemet.
 
 \subsubsection{UC 1 - Turn on filter}
-\begin{enumerate}
-\item Mål: LMS filteret aktiveres
 
-\item Initiering: Bruger
-
-\item Aktøre: bruger
-
-\item Prækondition: Systemet har strøm og er ikke tændt
-
-\item Postkondition: Filteret er aktivt
-
-\item Brugeren trykker på SW1 og filteret aktiveres
-
+Brugeren trykker på SW1 og filteret aktiveres. 
 
 
 \subsubsection{UC 2 - Turn off filter}
 
-\item Mål: LMS filteret deaktiveres
+Brugeren trykker på SW1 og filteret deaktiveres. 
 
-\item Initiering: Bruger
+\subsubsection{UC 3 - Filter aktiv}
 
-\item Aktøre: bruger
-
-\item Prækondition: Systemet har strøm og er tændt
-
-\item Postkondition: Filteret er ikke aktivt
-
-\item Brugeren trykker på SW1 og filteret deaktiveres
-
-
-\end{enumerate}
+Recording system modtager det filtrede lyd, hvis prækonditionen UC 1  er udført. 
 
 \newpage
 \section{Ikke-funktionelle krav}

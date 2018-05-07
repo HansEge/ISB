@@ -4,7 +4,7 @@
 
 
 \section{Teori}
-I procceseringsfasen af projektet, har vi valgt at bruge et adaptivt filter - LMS (Least Mean square) algoritme. Et adaptivt filter består af 2 funktionelle blokke, hvor den ene blok fungerer som et filter, fra dynamiske kofficienter som bliver opdateret LMS blokken.  Filteret trækker herefter de beregnede filter fra det samlede lydsignal. 
+I procceseringsfasen af projektet, har vi valgt at bruge et adaptivt filter - LMS (Least Mean square) algoritme. LMS er et adaptivt filter som består af 2 funktionelle blokke, hvor den ene blok (Linear Filter) fungerer som et filter, det andet (Adaptive Algorithm) som et dynamisk beregner af nye koefficinter til første blok.  Filteret trækker herefter de beregnede filter fra det samlede lydsignal. 
    
 
 \begin{figure}[H]
@@ -14,7 +14,7 @@ I procceseringsfasen af projektet, har vi valgt at bruge et adaptivt filter - LM
 	\label{fig:LMS_filter}
 \end{figure}
 
-På figur \ref{fig:LMS_filter} ses et overblik over det adative system, hvor x(n) er støjsignalet, y(n) er det filtrede støjsignal, med koefficienter som opdateres fra blokken "Adaptive Algoritm". d(n) er det ønskede signal inklusiv det støjende signal. e(n) er forskellen mellem d(n) og y(n) og derved støjen fratrukket fra det samlede signal af ønsket og støj.  \newline
+På figur \ref{fig:LMS_filter} ses et overblik over det adative system, hvor x(n) er støjsignalet, y(n) er det filtrede støjsignal, med koefficienter som opdateres fra blokken "Adaptive Algoritm". d(n) er det ønskede signal inklusiv det støjende signal. e(n) er forskellen mellem d(n) og y(n) og derved støjen fratrukket fra det samlede signal af ønsket og støj.\cite{Teori}  \newline 
 
 
 Det digitale filter bliver beregnet ud fra formlen:
@@ -33,4 +33,4 @@ Hvor W er den nye koefficient til filteret, X(n) er input signalet, og \textmu\ 
 Dette giver os et endeligt udtryk som stemmer overens med figur \ref{fig:LMS_filter}, ift summeringspunktet: 
 \begin{equation}
   e(n) = d(n)-y(n)
-\end{equation}
+\end{equation} 
