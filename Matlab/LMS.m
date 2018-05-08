@@ -31,7 +31,7 @@ s3 = A*sin(2*pi*f3*t);
 
 s = s1+s2+s3; % Vores ønsket signal
 
-ALI_G = ALI_G(160001:length(s)+160000); %Bruges når s er støjen
+ALI_G = ALI_G(160001:length(food)+160000); %Bruges når s er støjen
 %ALI_G = ALI_G(160001:481600); %Bruges når StarshipNoise er støjen
 %ALI_G = ALI_G(160001:length(food)+160000); %Bruges når food er støjen
 
@@ -40,29 +40,29 @@ food = food';
 
 %noise = randn(1,length(s))*0.1+s1+s3; %Kun støj
 
-noise = s;
+noise = fixed16(food);
 
-d = ALI_G+noise; %Ønsket signal + støj
+d = fixed16(ALI_G+noise); %Ønsket signal + støj
 
 %soundsc(d,fs)
 
 %%
 %Create FIR filter
-my = 0.008; % some number 0.004
-W = zeros(1,64);
+my = 0.01; % some number 0.004
+W = zeros(1,256);
 
 for n = 1:length(d)
     yn = 0;
     for m = 1:length(W)
         if n > m
-            yn = yn + W(m)*noise(n-m);
+            yn = yn + fixed32(W(m)*noise(n-m));
         end
     end
     y(n) = yn;
     e(n) = d(n) - y(n);
     for m = 1:length(W)
         if n > m
-            W(m) = W(m) + my*noise(n-m)*e(n);
+            W(m) = W(m) + fixed32(my*noise(n-m)*e(n));
         end
     end
 end
@@ -75,10 +75,15 @@ subplot(221),plot(t2,d),ylabel('Desired Signal'),
 subplot(222),plot(t2,noise),ylabel('Noise'),
 subplot(223),plot(t2,e),ylabel('Error'),
 subplot(224),plot(t2,y),ylabel('Adaptive Desired output');
-
 figure
-plot(20*log10(abs(fft(e))))
-figure
-plot(20*log10(abs(fft(d))))
-sound(e,fs)
+subplot(221),plot(t2,abs(fft(d))),ylabel('Desired Signal'),
+subplot(222),plot(t2,abs(fft(noise))),ylabel('Noise'),
+subplot(223),plot(t2,abs(fft(e))),ylabel('Error'),
+subplot(224),plot(t2,abs(fft(y))),ylabel('Adaptive Desired output');
 
+% figure
+% plot(20*log10(abs(fft(e))))
+% figure
+% plot(20*log10(abs(fft(d))))
+% sound(e,fs)
+% sound(y,fs)
