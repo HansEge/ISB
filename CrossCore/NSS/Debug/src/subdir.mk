@@ -8,6 +8,7 @@ C_SRCS += \
 ../src/Init.c 
 
 CPP_SRCS += \
+../src/AlgoTester.cpp \
 ../src/Algorithm.cpp \
 ../src/Application.cpp \
 ../src/Controller.cpp \
@@ -16,6 +17,7 @@ CPP_SRCS += \
 ../src/Switch.cpp 
 
 SRC_OBJS += \
+./src/AlgoTester.doj \
 ./src/Algorithm.doj \
 ./src/Application.doj \
 ./src/Controller.doj \
@@ -30,6 +32,7 @@ C_DEPS += \
 ./src/Init.d 
 
 CPP_DEPS += \
+./src/AlgoTester.d \
 ./src/Algorithm.d \
 ./src/Application.d \
 ./src/Controller.d \
@@ -39,6 +42,13 @@ CPP_DEPS += \
 
 
 # Each subdirectory must supply rules for building sources it contributes
+src/AlgoTester.doj: ../src/AlgoTester.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
+	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-b893300d3ab5a8ae5c8732607184049b.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/AlgoTester.d" -c++ -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
 src/Algorithm.doj: ../src/Algorithm.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
