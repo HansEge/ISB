@@ -5,4 +5,31 @@
 
 \section{Matlab simulering}
 
-Efter den teoretiske undersøgelse, vil vi i dette afsnit udvikle og vise en simuleret version af vores filter, hvor der er taget udgangspunkt i teorien fra \ref{sec:Teori}
+Efter den teoretiske undersøgelse, vil vi i dette afsnit udvikle og vise en simuleret version af vores filter, hvor der er taget udgangspunkt i Teori afsnittet. Da vi tager udgangspunkt i teoriafsnittet starter vi med at vise hvordan vi har implementeret vores filter. 
+
+\begin{lstlisting}
+%Create LMS FIR filter
+my = 0.01; % some number 0.01
+W = zeros(1,256);
+
+for n = 1:length(d) %run every sample 
+    yn = 0;
+    for m = 1:length(W) %make new filteret sample 
+        if n > m
+            yn = yn + fixed32(W(m)*noise(n-m));
+        end
+    end
+    y(n) = yn;
+    e(n) = d(n) - y(n);
+    for m = 1:length(W) %make new koefficient  
+        if n > m
+            W(m) = W(m) + fixed32(my*noise(n-m)*e(n));
+        end
+    end
+end
+\end{lstlisting}
+
+Først i filteret vælger vi en my, som ift til teori afsnittet bestemmer hvor hurtig filteret er. I dette eksempel bruger vi en værdi som er testet frem til at have et god forhold mellem hastighed og settling time. Herefter bestemmes hvor mange koefficienter filteret skal have. Vi har valgt et forholdsvis højt tal, da vi simulerer. Dette vil ikke nødvendigvis være muligt på Cross-core. \\
+
+Igennem genereringen af filteret laves der 3 forloop. Et som kører hver sample igennem, et som laver det filtrede nye sample, og et som opdaterer koefficinterne ift tilbagekoblingen. \\
+De nye filter koefficienter bliver herved opdateret til det ønskede filter, hvor e(n) bliver fejlen ift strukturen, som er det talsignal der ønskes. 
