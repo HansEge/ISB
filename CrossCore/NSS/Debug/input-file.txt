@@ -1,3 +1,4 @@
+"src/AlgoTester.doj"
 "src/Algorithm.doj"
 "src/Application.doj"
 "src/Controller.doj"

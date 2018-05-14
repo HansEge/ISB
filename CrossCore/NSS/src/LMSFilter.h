@@ -11,7 +11,7 @@
 #include <stdfix.h>
 #include "Algorithm.h"
 
-#define NUM_WEIGTHS 64
+#define NUM_WEIGTHS 32
 
 
 typedef struct
