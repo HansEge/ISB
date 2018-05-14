@@ -36,3 +36,4 @@ src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ S
 src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/stdfix_limits.h
 src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/stdfix_io.h
 src/Application.doj: ../src/Algorithm.h
+src/Application.doj: ../src/AlgoTester.h

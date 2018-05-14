@@ -1,0 +1,42 @@
+10:32:21 **** Incremental Build of configuration Debug for project DynFilter ****
+make all 
+'Building file: ../src/Application.cpp'
+'Invoking: CrossCore Blackfin C/C++ Compiler'
+ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Application.d" -c++ -o "src/Application.doj" "../src/Application.cpp"
+'Finished building: ../src/Application.cpp'
+' '
+'Building file: ../src/Controller.cpp'
+'Invoking: CrossCore Blackfin C/C++ Compiler'
+ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Controller.d" -c++ -o "src/Controller.doj" "../src/Controller.cpp"
+'Finished building: ../src/Controller.cpp'
+' '
+'Building file: ../src/ISR.c'
+'Invoking: CrossCore Blackfin C/C++ Compiler'
+ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/ISR.d" -o "src/ISR.doj" "../src/ISR.c"
+'Finished building: ../src/ISR.c'
+' '
+'Building file: ../src/Init.c'
+'Invoking: CrossCore Blackfin C/C++ Compiler'
+ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Init.d" -o "src/Init.doj" "../src/Init.c"
+'Finished building: ../src/Init.c'
+' '
+'Building file: ../src/LMSFilter.cpp'
+'Invoking: CrossCore Blackfin C/C++ Compiler'
+ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/LMSFilter.d" -c++ -o "src/LMSFilter.doj" "../src/LMSFilter.cpp"
+'Finished building: ../src/LMSFilter.cpp'
+' '
+'Building file: ../src/Process.cpp'
+'Invoking: CrossCore Blackfin C/C++ Compiler'
+ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Process.d" -c++ -o "src/Process.doj" "../src/Process.cpp"
+'Finished building: ../src/Process.cpp'
+' '
+'Building file: ../src/Switch.cpp'
+'Invoking: CrossCore Blackfin C/C++ Compiler'
+ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Switch.d" -c++ -o "src/Switch.doj" "../src/Switch.cpp"
+'Finished building: ../src/Switch.cpp'
+' '
+'Building target: DynFilter.dxe'
+'Invoking: CrossCore Blackfin Linker'
+ccblkfn.exe -proc ADSP-BF533 -si-revision 0.6 -TC:/Users/stinu/Desktop/ISB/CrossCore/NSS/system/startup_ldf/app.ldf -no-mem -LC:/Users/stinu/Desktop/ISB/CrossCore/NSS/Debug/system/startup_ldf -flags-link -MDCORE0,-MDDEBUG -add-debug-libpaths -o DynFilter.dxe @input-file.txt  -flags-link -od,.\.
+'Finished building target: DynFilter.dxe'
+' '

@@ -11,11 +11,7 @@
 #include <stdfix.h>
 #include "Algorithm.h"
 
-<<<<<<< HEAD
 #define NUM_WEIGTHS 16
-=======
-#define NUM_WEIGTHS 32
->>>>>>> 6fa30427fae59f1a367d7ab5f935000e6fcce47e
 
 
 typedef struct

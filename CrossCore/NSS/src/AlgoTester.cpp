@@ -1,5 +1,4 @@
 /*
-<<<<<<< HEAD
 b * AlgoTester.cpp
 =======
  * AlgoTester.cpp
@@ -11,7 +10,6 @@ b * AlgoTester.cpp
 
 #include <stdio.h>
 #include "AlgoTester.h"
-<<<<<<< HEAD
 #include "LMSFilter.h"
 
 // Fixed signal size must be manually changed
@@ -21,50 +19,29 @@ b * AlgoTester.cpp
 section("L1_data_a") short NoiseSignal[N];	// Test noise signal loaded from .txt file
 section("L1_data_a") short DesiredSignal[N];// Test desired signal loaded from .txt file
 section("L1_data_a") short OutputSignal[N]; // Result after processing test signal with m_pAlgo
-=======
 
-// Fixed signal size must be manually changed
-#define 	N 	2400  // Test signal length
-
-// Test signal used for testing made as global variables for plotting
-short TestSignal[N]; // Test signal loaded from test input file
-short OutputSignal[N]; // Result after processing test signal with m_pAlgo
->>>>>>> 6fa30427fae59f1a367d7ab5f935000e6fcce47e
 
 AlgoTester::AlgoTester(Algorithm *pAlgo)
 {
 	m_pAlgo = pAlgo;
 }
 
-<<<<<<< HEAD
 short AlgoTester::readSignal(short noiseBuffer[], short desiredSignalBuffer[], char *noiseName, char *desiredName)
-=======
-short AlgoTester::readSignal(short bufferNoise[], short bufferDesired[], char *name)
->>>>>>> 6fa30427fae59f1a367d7ab5f935000e6fcce47e
 {
 	short error = -1;
 	FILE *fp;
 	short tmp;
 
-<<<<<<< HEAD
 	fp=fopen(noiseName , "r");
-=======
-	fp=fopen(name , "r");
->>>>>>> 6fa30427fae59f1a367d7ab5f935000e6fcce47e
 	if (fp)
 	{
 		for(short n=0; n < N; n++) {
 			fscanf(fp, "%hd,\n", &tmp);
-<<<<<<< HEAD
 			noiseBuffer[n] = tmp;
-=======
-			bufferNoise[n] = tmp;
->>>>>>> 6fa30427fae59f1a367d7ab5f935000e6fcce47e
 		}
 		fclose(fp);
 		error = 0;
 	}
-<<<<<<< HEAD
 
 	fp = NULL;
 	tmp = 0;
@@ -79,11 +56,6 @@ short AlgoTester::readSignal(short bufferNoise[], short bufferDesired[], char *n
 		fclose(fp);
 		error = 0;
 	}
-
-
-
-=======
->>>>>>> 6fa30427fae59f1a367d7ab5f935000e6fcce47e
 	return error;
 }
 
@@ -103,7 +75,7 @@ short AlgoTester::writeSignal(short buffer[], char *name)
 	return error;
 }
 
-<<<<<<< HEAD
+
 short AlgoTester::runTest(char *noiseName, char *desiredName, char *outFileName)
 {
 	// Reading test signal in inFileName
@@ -185,5 +157,3 @@ short AlgoTester::runTest(char *inFileName, char *outFileName)
 }
 <<<<<<< HEAD
 */
-=======
->>>>>>> 6fa30427fae59f1a367d7ab5f935000e6fcce47e
