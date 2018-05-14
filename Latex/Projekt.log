@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.9)  7 MAY 2018 10:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.9)  14 MAY 2018 10:11
 entering extended mode
 **./Projekt.tex
 (Projekt.tex
@@ -876,7 +876,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 29.
 
 LaTeX Warning: Label `fig:LMS_filter' multiply defined.
 
-))
+) (Chapters/Matlab/Matlab.aux))
 \openout1 = `Projekt.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
@@ -893,7 +893,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
 LaTeX Font Info:    ... okay on input line 34.
 LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 34.
 LaTeX Font Info:    Try loading font information for LGR+cmr on input line 34.
- (C:\Users\Soren\AppData\Roaming\MiKTeX\2.9\tex\latex\cbfonts-fd\lgrcmr.fd
+
+(C:\Users\Soren\AppData\Roaming\MiKTeX\2.9\tex\latex\cbfonts-fd\lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
 LaTeX Font Info:    ... okay on input line 34.
@@ -1082,7 +1083,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 (C:\Users\Soren\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-<Img/logo.jpg, id=62, 454.69875pt x 116.68594pt>
+<Img/logo.jpg, id=66, 454.69875pt x 116.68594pt>
 File: Img/logo.jpg Graphic file (type jpg)
  <use Img/logo.jpg>
 Package pdftex.def Info: Img/logo.jpg used on input line 83.
@@ -1137,7 +1138,7 @@ Package babel Info: Redefining danish shorthand "|
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 5.
 
-<Chapters/Indledning/Img/Konceptbillede.png, id=106, 1129.21875pt x 646.66594pt
+<Chapters/Indledning/Img/Konceptbillede.png, id=111, 1129.21875pt x 646.66594pt
 >
 File: Chapters/Indledning/Img/Konceptbillede.png Graphic file (type png)
  <use Chapters/Indledning/Img/Konceptbillede.png>
@@ -1172,7 +1173,7 @@ Package babel Info: Redefining danish shorthand "|
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 22.
 
-<Chapters/Krav/Img/Aktoer_Kontekst.png, id=113, 395.22656pt x 286.06876pt>
+<Chapters/Krav/Img/Aktoer_Kontekst.png, id=118, 395.22656pt x 286.06876pt>
 File: Chapters/Krav/Img/Aktoer_Kontekst.png Graphic file (type png)
 
 <use Chapters/Krav/Img/Aktoer_Kontekst.png>
@@ -1188,7 +1189,7 @@ Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 39.
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 39.
-<Chapters/Krav/Img/Usecase_Diagram.png, id=115, 399.74344pt x 286.06876pt>
+<Chapters/Krav/Img/Usecase_Diagram.png, id=120, 399.74344pt x 286.06876pt>
 File: Chapters/Krav/Img/Usecase_Diagram.png Graphic file (type png)
 
 <use Chapters/Krav/Img/Usecase_Diagram.png>
@@ -1276,7 +1277,7 @@ Package babel Info: Redefining danish shorthand "|
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 5.
 
-<Chapters/Struktur/Img/Struktur.png, id=149, 569.87906pt x 240.14719pt>
+<Chapters/Struktur/Img/Struktur.png, id=154, 569.87906pt x 240.14719pt>
 File: Chapters/Struktur/Img/Struktur.png Graphic file (type png)
 
 <use Chapters/Struktur/Img/Struktur.png>
@@ -1308,7 +1309,7 @@ Package babel Info: Redefining danish shorthand "|
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 6.
 
-<Chapters/Indledning/Img/Figures.png, id=157, 333.245pt x 167.62625pt>
+<Chapters/Indledning/Img/Figures.png, id=162, 333.245pt x 167.62625pt>
 File: Chapters/Indledning/Img/Figures.png Graphic file (type png)
 
 <use Chapters/Indledning/Img/Figures.png>
@@ -1333,37 +1334,65 @@ Package babel Info: Redefining danish shorthand "~
 
 
  <./Chapters/Indledning/Img/Figures.png>]
-No file Projekt.bbl.
+\openout2 = `Chapters/Matlab/Matlab.aux'.
+
+ (Chapters/Matlab/Matlab.tex
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 133.
+(babel)             in language  on input line 6.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 133.
+(babel)             in language  on input line 6.
+
+
+LaTeX Warning: Reference `sec:Teori' on page 9 undefined on input line 8.
+
+)
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 133.
+(babel)             in language  on input line 110.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 133.
-[9
+(babel)             in language  on input line 110.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 110.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 110.
+ [9
+
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
- (Projekt.aux (Chapters/Indledning/Indledning.aux) (Chapters/Krav/Krav.aux)
-(Chapters/Struktur/Struktur.aux) (Chapters/Teori/Teori.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
+No file Projekt.bbl.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 134.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 134.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 134.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 134.
+[10
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 134.
+ (Projekt.aux (Chapters/Indledning/Indledning.aux) (Chapters/Krav/Krav.aux) (Ch
+apters/Struktur/Struktur.aux) (Chapters/Teori/Teori.aux)
+(Chapters/Matlab/Matlab.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 134.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 134.
 Package rerunfilecheck Info: File `Projekt.out' has not changed.
-(rerunfilecheck)             Checksum: 2645E0B8CE58DFB675A6EC1049E44576;844.
+(rerunfilecheck)             Checksum: E48DCE919014CA750DADB577A971DB2C;898.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 134.
  ) 
 Here is how much of TeX's memory you used:
- 23343 strings out of 493328
- 421455 string characters out of 3139125
- 592431 words of memory out of 3000000
- 26370 multiletter control sequences out of 15000+200000
+ 23356 strings out of 493328
+ 421696 string characters out of 3139125
+ 592976 words of memory out of 3000000
+ 26373 multiletter control sequences out of 15000+200000
  13871 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,6n,92p,848b,681s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1378,9 +1407,9 @@ pe1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
 12.pfb>
-Output written on Projekt.pdf (10 pages, 2934282 bytes).
+Output written on Projekt.pdf (11 pages, 2935953 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 155 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 241 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

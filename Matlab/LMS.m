@@ -11,8 +11,6 @@ clear;
 [ALI_G] = audioread('ali g harvard speach part 2.mp3');
 [food,fs2] = audioread('FoodProc.wav');
 
-
-
 f1 = 11000;
 f2 = 5500;
 f3 = 2750;
@@ -31,7 +29,7 @@ s3 = A*sin(2*pi*f3*t);
 
 s = s1+s2+s3; % Vores ønsket signal
 
-ALI_G = ALI_G(160001:length(food)+160000); %Bruges når s er støjen
+ALI_G = ALI_G(160001:length(s)+160000); %Bruges når s er støjen
 %ALI_G = ALI_G(160001:481600); %Bruges når StarshipNoise er støjen
 %ALI_G = ALI_G(160001:length(food)+160000); %Bruges når food er støjen
 
@@ -40,11 +38,28 @@ food = food';
 
 %noise = randn(1,length(s))*0.1+s1+s3; %Kun støj
 
-noise = fixed16(food);
+noise = fixed16(s);
 
 d = fixed16(ALI_G+noise); %Ønsket signal + støj
 
 %soundsc(d,fs)
+
+%% greate txt files
+y16 = noise*2^15;
+fid = fopen('noise_signal.txt', 'w');
+for i=1:length(y16)
+    xtext = num2str(round(y16(i)));
+    fprintf(fid, '%s,\r\n', xtext);
+end
+fclose(fid);
+
+y16 = d*2^15;
+fid = fopen('d_signal.txt', 'w');
+for i=1:length(y16)
+    xtext = num2str(round(y16(i)));
+    fprintf(fid, '%s,\r\n', xtext);
+end
+fclose(fid);
 
 %%
 %Create FIR filter
