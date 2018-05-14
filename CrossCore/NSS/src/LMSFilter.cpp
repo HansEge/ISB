@@ -1,5 +1,5 @@
 /*
- * LMSFilter.cpp
+ q q * LMSFilter.cpp
  *
  *  Created on: 30. apr. 2018
  *      Author: stinu
@@ -27,7 +27,7 @@ void LMSFilter::process(short* noise, short* desiredSignal, short* output, short
 	fract *e = (fract *)output;
 	fract *d = (fract *)desiredSignal;
 
-	fract my = 0.004;
+	long fract my = 0.004;
 
 	for(short i = 0; i < len; i++)
 	{
@@ -42,13 +42,17 @@ void LMSFilter::process(short* noise, short* desiredSignal, short* output, short
 		}
 		e[i] = d[i] - yn;
 
+		long fract tmp_W = 0;
+
 		for(short k = 0; k < NUM_WEIGTHS; k++)
 		{
 			if(i > k)
 			{
-				Filter.W[k] = Filter.W[k] + my*x[i-k]*e[i];
+				Filter.W[k] = Filter.W[k]  + my*x[i-k]*e[i];
+
 			}
 		}
+
 	}
 }
 

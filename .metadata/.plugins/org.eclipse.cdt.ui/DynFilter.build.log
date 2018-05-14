@@ -1,0 +1,26 @@
+12:25:09 **** Incremental Build of configuration Debug for project DynFilter ****
+make all 
+'Building file: ../src/AlgoTester.cpp'
+'Invoking: CrossCore Blackfin C/C++ Compiler'
+ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/AlgoTester.d" -c++ -o "src/AlgoTester.doj" "../src/AlgoTester.cpp"
+'Finished building: ../src/AlgoTester.cpp'
+' '
+'Building target: DynFilter.dxe'
+'Invoking: CrossCore Blackfin Linker'
+ccblkfn.exe -proc ADSP-BF533 -si-revision 0.6 -TC:/Users/stinu/Desktop/ISB/CrossCore/NSS/system/startup_ldf/app.ldf -no-mem -LC:/Users/stinu/Desktop/ISB/CrossCore/NSS/Debug/system/startup_ldf -flags-link -MDCORE0,-MDDEBUG -add-debug-libpaths -o DynFilter.dxe @input-file.txt  -flags-link -od,.\.
+
+[Error li1040] "C:\Users\stinu\Desktop\ISB\CrossCore\NSS\system\startup_ldf\app.ldf":374 Out of memory in output section 'L1_data_a_bsz_prio3' in processor 'p0'
+        Total of 0x3000 word(s) were not mapped.
+For more details, see 'linker_log.xml' in the output directory.
+
+
+[Error li1040] "C:\Users\stinu\Desktop\ISB\CrossCore\NSS\system\startup_ldf\app.ldf":507 Out of memory in output section 'L1_data_b_bsz_prio3' in processor 'p0'
+        Total of 0x3000 word(s) were not mapped.
+For more details, see 'linker_log.xml' in the output directory.
+
+Linker finished with 2 errors 
+cc3089: fatal error: Link failed (code:1)
+make: *** [DynFilter.dxe] Error 1
+
+12:25:14 Build Finished (took 4s.761ms)
+

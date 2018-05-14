@@ -11,12 +11,12 @@
 #include <stdfix.h>
 #include "Algorithm.h"
 
-#define NUM_WEIGTHS 32
+#define NUM_WEIGTHS 16
 
 
 typedef struct
 {
-	fract W[NUM_WEIGTHS];
+	long fract W[NUM_WEIGTHS];
 	/*
 	fract x[NUM_WEIGTHS-1]; 		// x delay line x(n-1), x(n-2)
 	long fract y[NUM_WEIGTHS-1]; // y delay line y(n-1), y(n-2), store y in format 1.31 to minimize product quantization
