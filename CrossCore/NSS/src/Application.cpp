@@ -53,15 +53,15 @@ void main(void)
 	sysreg_write(reg_SYSCFG, 0x32); //Enable 64-bit,free-running cycle-counter
 		  			     	   		//BF533 Hardware Reference pg 4-6 NB!!!
 
-#if 1 // TODO Set to 1 for testing
+#if 0 // TODO Set to 1 for testing
 	InitAlgoProcess(); // Initialization of processing algorithms
 	//FilterLeft.updateDynFilter();
-	//AlgoTester algoTest(&FilterLeft);
-	//algoTest.runTestDyn("..\\src\\x_signal.txt", "..\\src\\y_signal.txt", "..\\src\\fft_mag.txt");
+	AlgoTester algoTest(&Filter);
+	algoTest.runTest("..\\src\\noise_signal.txt", "..\\src\\d_signal.txt", "..\\src\\output_signal.txt");
 #else
 	InitSystemHardware(); // Initialization of BF533
 	InitAlgoProcess(); // Initialization of processing algorithms
-	printf("Application running: SW4 turns filter on, SW5 turns filter off\r\n");
+	printf("Application running: Play noise and desired signal now\r\n");
 	Init_Interrupt(); // Enable interrupts
 	Enable_DMA();
 #endif
