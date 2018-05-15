@@ -243,3 +243,6 @@ java.lang.RuntimeException: [TpsdkServer] Invalid processor ID
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+
+!ENTRY org.eclipse.core.jobs 2 2 2018-05-14 12:50:42.219
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.service.CommandControl$CommandSendJob
