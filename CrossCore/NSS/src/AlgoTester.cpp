@@ -62,24 +62,36 @@ short AlgoTester::readSignal(short noiseBuffer[], short desiredSignalBuffer[], c
 	return error;
 }
 
-short AlgoTester::writeSignal(short buffer[], char *name)
+short AlgoTester::writeSignal(short filteredOutpurBuffer[], short yNoiseBuffer[], char *FilteredOutput, char *NoiseOutput)
 {
 	short error = -1;
 	FILE *fp;
 
-	fp=fopen(name, "w");
+	fp=fopen(FilteredOutput, "w");
 	if (fp)
 	{
 		for(short n=0; n < N; n++)
-			fprintf(fp, "%hd,\n", buffer[n]);
+			fprintf(fp, "%hd,\n", filteredOutpurBuffer[n]);
 		fclose(fp);
 		error = 0;
 	}
+
+	fp = NULL;
+
+	fp=fopen(NoiseOutput, "w");
+	if (fp)
+	{
+		for(short n=0; n < N; n++)
+			fprintf(fp, "%hd,\n", yNoiseBuffer[n]);
+		fclose(fp);
+		error = 0;
+	}
+
 	return error;
 }
 
 
-short AlgoTester::runTest(char *noiseName, char *desiredName, char *outFileName)
+short AlgoTester::runTest(char *noiseName, char *desiredName, char *outError, char *outYErrer)
 {
 	// Reading test signal in inFileName
 	short error = readSignal(NoiseSignal, DesiredSignal, noiseName, desiredName);

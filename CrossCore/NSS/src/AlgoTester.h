@@ -16,8 +16,8 @@ public:
 	short runTest(char *noiseName, char *desiredName, char *outFileName);
 
 private:
-	short readSignal(short buffer[], short desiredSignal[], char *noise, char *desired);
-	short writeSignal(short buffer[], char *name);
+	short readSignal(short filteredOutpurBuffer[], short yNoiseBuffer[], char *FilteredOutput, char *NoiseOutput);
+	short writeSignal(char *noiseName, char *desiredName, char *outError, char *outYErrer);
 	short runTest(char *inFileName, char *outFileName);
 
 	Algorithm *m_pAlgo;
