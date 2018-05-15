@@ -1,0 +1,29 @@
+/*
+ * AlgoTester.h
+ *
+ *  Created on: 28. feb. 2018
+ *      Author: Kim Bjerge
+ */
+
+#ifndef ALGOTESTER_H_
+#define ALGOTESTER_H_
+#include "Algorithm.h"
+#include <math.h>
+
+class AlgoTester {
+public:
+	AlgoTester(Algorithm *pAlgo);
+	//short runTestDyn(char *inFileName, char *outFileName, char *fftFileName);
+	short runTest(char *noiseName, char *desiredName, char *outError, char *outYError);
+
+private:
+	short readSignal(short noiseBuffer[], short desiredSignalBuffer[], char *noiseName, char *desiredName);
+	short writeSignal(short filteredOutputBuffer[], char *FilteredOutput);
+	short writeSignal(int filteredOutputBuffer[], char *FilteredOutput);
+
+
+	Algorithm *m_pAlgo;
+};
+
+#endif /* ALGOTESTER_H_ */
+

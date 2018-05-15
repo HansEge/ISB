@@ -58,7 +58,7 @@
 <stringAttribute key="AutomaticBreakpointPublic8" value="true"/>
 <stringAttribute key="AutomaticBreakpointSetAtLocation0" value="___lib_prog_term"/>
 <stringAttribute key="AutomaticBreakpointSetAtLocation3" value="__fatal_error"/>
-<stringAttribute key="AutomaticBreakpointSetAtLocation4" value="0xffa014dc"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation4" value="0xffa014f0"/>
 <stringAttribute key="AutomaticBreakpointSetAtLocation5" value="__primIO"/>
 <stringAttribute key="AutomaticBreakpointSetAtLocation8" value="__fatal_exception"/>
 <stringAttribute key="AutomaticBreakpointUser0" value="false"/>

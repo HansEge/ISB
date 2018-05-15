@@ -7,6 +7,8 @@
 
 #include "LMSFilter.h"
 
+extern short y_buffer[];
+
 LMSFilter::LMSFilter()
 {
 		//Set everything to 0
@@ -26,6 +28,7 @@ void LMSFilter::process(short* noise, short* desiredSignal, short* output, short
 	fract *x = (fract *)noise;
 	fract *e = (fract *)output;
 	fract *d = (fract *)desiredSignal;
+	fract *y = (fract *)y_buffer;
 
 	long fract my = 0.004;
 
@@ -40,6 +43,7 @@ void LMSFilter::process(short* noise, short* desiredSignal, short* output, short
 				yn = yn + Filter.W[j]*x[i-j];
 			}
 		}
+		y[i] = (fract)yn;
 		e[i] = d[i] - yn;
 
 		long fract tmp_W = 0;

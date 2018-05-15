@@ -12,6 +12,7 @@ b * AlgoTester.cpp
 #include "AlgoTester.h"
 #include "LMSFilter.h"
 
+
 // Fixed signal size must be manually changed
 #define N 1024  // Test signal length
 
@@ -23,6 +24,7 @@ short DesiredSignal[N];// Test desired signal loaded from .txt file
 //section("L1_data_a")
 short OutputSignal[N]; // Result after processing test signal with m_pAlgo
 
+short y_buffer[N];
 
 AlgoTester::AlgoTester(Algorithm *pAlgo)
 {
@@ -62,7 +64,7 @@ short AlgoTester::readSignal(short noiseBuffer[], short desiredSignalBuffer[], c
 	return error;
 }
 
-short AlgoTester::writeSignal(short filteredOutpurBuffer[], short yNoiseBuffer[], char *FilteredOutput, char *NoiseOutput)
+short AlgoTester::writeSignal(short filteredOutputBuffer[], char *FilteredOutput)
 {
 	short error = -1;
 	FILE *fp;
@@ -71,27 +73,14 @@ short AlgoTester::writeSignal(short filteredOutpurBuffer[], short yNoiseBuffer[]
 	if (fp)
 	{
 		for(short n=0; n < N; n++)
-			fprintf(fp, "%hd,\n", filteredOutpurBuffer[n]);
+			fprintf(fp, "%hd,\n", filteredOutputBuffer[n]);
 		fclose(fp);
 		error = 0;
 	}
-
-	fp = NULL;
-
-	fp=fopen(NoiseOutput, "w");
-	if (fp)
-	{
-		for(short n=0; n < N; n++)
-			fprintf(fp, "%hd,\n", yNoiseBuffer[n]);
-		fclose(fp);
-		error = 0;
-	}
-
 	return error;
 }
 
-
-short AlgoTester::runTest(char *noiseName, char *desiredName, char *outError, char *outYErrer)
+short AlgoTester::runTest(char *noiseName, char *desiredName, char *outError, char *outYError)
 {
 	// Reading test signal in inFileName
 	short error = readSignal(NoiseSignal, DesiredSignal, noiseName, desiredName);
@@ -104,15 +93,16 @@ short AlgoTester::runTest(char *noiseName, char *desiredName, char *outError, ch
 		m_pAlgo->process(NoiseSignal, DesiredSignal, OutputSignal, N);
 
 		// Writing result from OutputSignal to outFileName
-		error = writeSignal(OutputSignal, outFileName);
+		error = writeSignal(OutputSignal,outError);
+		error = writeSignal(y_buffer, outYError);
 
 		if (error == 0)
-			printf("Result signal of %d samples saved in %s \n", N, outFileName);
+			printf("Result signal of %d samples saved in %s \n", N, outError);
 		else
-			printf("Error writing result to file %s \n", outFileName);
+			printf("Error writing result to file %s \n", outError);
 	}
 	else
-		printf("Error reading file %s and %s with input test signal\n", noiseName, desiredName);
+		printf("Error reading file %s with input test signal\n", outError);
 
 	return error;
 }
