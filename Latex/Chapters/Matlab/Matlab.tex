@@ -32,4 +32,66 @@ end
 Først i filteret vælger vi en my, som ift til teori afsnittet bestemmer hvor hurtig filteret er. I dette eksempel bruger vi en værdi som er testet frem til at have et god forhold mellem hastighed og settling time. Herefter bestemmes hvor mange koefficienter filteret skal have. Vi har valgt et forholdsvis højt tal, da vi simulerer. Dette vil ikke nødvendigvis være muligt på Cross-core. \\
 
 Igennem genereringen af filteret laves der 3 forloop. Et som kører hver sample igennem, et som laver det filtrede nye sample, og et som opdaterer koefficinterne ift tilbagekoblingen. \\
-De nye filter koefficienter bliver herved opdateret til det ønskede filter, hvor e(n) bliver fejlen ift strukturen, som er det talsignal der ønskes. 
+De nye filter koefficienter bliver herved opdateret til det ønskede filter, hvor e(n) bliver fejlen ift figur \ref{fig:LMS_filter}, som er det talesignal der ønskes. \\
+Koden er bygget op sådan at vi kører en fixed16 og fixed32, for at simulere det bedst muligt ift blackfin. Fixed16 svarer til fixed point 1.15 og fixed32 til fixed point 1.31. 
+\\
+Dette giver os et filter som fungerer efter hensigten. Først testes der med 3 sinus toner, som ligger indover et tale signal, disse 3 toner skal derved gerne blive filtreret gennem filteret. 
+\newpage
+\subsection{Første test}
+Den første test der blev udført var så simpel som mulig. I forsøget generes et talesignal med 3 sinustoner indover. 
+Figur \ref{fig:Filter_time} viser signalet som bliver filtreret i tidsdomænet. Her er det værd at observerer settling tiden på filteret som ses i y(n). Denne settling tid vil kunne gøres mindre ved at justere på my. Der er valgt til opgaven her at teste med 0.01 my. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/Filter_time}
+	\caption{LMS filter i tid (3 sinus toner)}
+	\label{fig:Filter_time}
+\end{figure}
+\newpage
+Herefter vises på figur \ref{fig:Filter_Freq} signalet i frekvens domænet, her ses hvordan filteret filtrere den fejl som skabes fra, og derved skaber et signal e(n), som er talesignalet uden sinus tonerne. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/Filter_Freq}
+	\caption{LMS filter i frekvens (3 sinus toner)}
+	\label{fig:Filter_Freq}
+\end{figure}
+\newpage
+Ved at kigge på selve filteret ses at filteret (figur \ref{fig:Filter}) skaber et filter som kune lukker de 3 sinus toner igennem, hvilket er hensigten. Dette signal bliver så fratrukket det endelige samlede signal, for at få en error som er det endelige e(n). 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/Filter}
+	\caption{LMS filter(3 sinus toner)}
+	\label{fig:Filter}
+\end{figure}
+\newpage
+\subsection{Anden test}
+Første test var i den nemme og simple ende, da vi kun skulle filtrere rene toner fra, vil der i anden test forsøges at filtere en foodprocessor som bekrevet i indledningen. Denne opgave en del mere udfordrende for filteret da den nu skal filtrere på mange toner og ikke kune 3, samtidig med den skal lade nogle bestemte toner gå igennem, som kommer fra talesignalet. \\
+På figur \ref{fig:Filter_time_food}, ses nu det endelige produkt i tidsdomænet, der ses her en kraftig filtrering af signalet fra d(n) til e(n). Igen ser vi også en y(n) der har en settling time, inden filteret begynder at virke efter hensigten. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/Filter_time_food}
+	\caption{LMS filter i tid (food processor)}
+	\label{fig:Filter_time_food}
+\end{figure}
+\newpage
+
+Herefter tager vi et blik på frekvens donænet som viser lidt det samme billede som tidsdomænet, at LMS filteret filtrerer kraftigt fra d(n) til e(n), dette kommer af at foodprocessoren er indeholder mange lydfrekvenser. Hvis vi kigger lidt på figur \ref{fig:Filter_Freq_food}, og figur \ref{fig:Filter_food}, kan man nærstudere figur \ref{fig:Filter_food}, og se at filteret fungerer bedst når frekvenserne er udenfor talefrekvenserne, dette betyder også at filteret ikke prøve at filtrere støj fra som ligger i tale signalet, dette kan vi se fra figur \ref{fig:Filter_food}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/Filter_Freq_food}
+	\caption{LMS filter i frekvens (food processor)}
+	\label{fig:Filter_Freq_food}
+\end{figure}
+\newpage
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/Filter_food}
+	\caption{LMS filter(food processor)}
+	\label{fig:Filter_food}
+\end{figure}
+
+
+

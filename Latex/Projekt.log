@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.9)  14 MAY 2018 12:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.9)  15 MAY 2018 12:35
 entering extended mode
 **./Projekt.tex
 (Projekt.tex
@@ -1083,7 +1083,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 (C:\Users\Soren\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-<Img/logo.jpg, id=66, 454.69875pt x 116.68594pt>
+<Img/logo.jpg, id=74, 454.69875pt x 116.68594pt>
 File: Img/logo.jpg Graphic file (type jpg)
  <use Img/logo.jpg>
 Package pdftex.def Info: Img/logo.jpg used on input line 82.
@@ -1138,7 +1138,7 @@ Package babel Info: Redefining danish shorthand "|
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 5.
 
-<Chapters/Indledning/Img/Konceptbillede.png, id=111, 1129.21875pt x 646.66594pt
+<Chapters/Indledning/Img/Konceptbillede.png, id=133, 1129.21875pt x 646.66594pt
 >
 File: Chapters/Indledning/Img/Konceptbillede.png Graphic file (type png)
  <use Chapters/Indledning/Img/Konceptbillede.png>
@@ -1173,7 +1173,7 @@ Package babel Info: Redefining danish shorthand "|
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 22.
 
-<Chapters/Krav/Img/Aktoer_Kontekst.png, id=118, 395.22656pt x 286.06876pt>
+<Chapters/Krav/Img/Aktoer_Kontekst.png, id=140, 395.22656pt x 286.06876pt>
 File: Chapters/Krav/Img/Aktoer_Kontekst.png Graphic file (type png)
 
 <use Chapters/Krav/Img/Aktoer_Kontekst.png>
@@ -1189,7 +1189,7 @@ Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 39.
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 39.
-<Chapters/Krav/Img/Usecase_Diagram.png, id=120, 399.74344pt x 286.06876pt>
+<Chapters/Krav/Img/Usecase_Diagram.png, id=142, 399.74344pt x 286.06876pt>
 File: Chapters/Krav/Img/Usecase_Diagram.png Graphic file (type png)
 
 <use Chapters/Krav/Img/Usecase_Diagram.png>
@@ -1277,7 +1277,7 @@ Package babel Info: Redefining danish shorthand "|
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 5.
 
-<Chapters/Struktur/Img/Struktur.png, id=154, 569.87906pt x 240.14719pt>
+<Chapters/Struktur/Img/Struktur.png, id=176, 569.87906pt x 240.14719pt>
 File: Chapters/Struktur/Img/Struktur.png Graphic file (type png)
 
 <use Chapters/Struktur/Img/Struktur.png>
@@ -1309,7 +1309,7 @@ Package babel Info: Redefining danish shorthand "|
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 6.
 
-<Chapters/Teori/Img/Figures.png, id=162, 333.245pt x 167.62625pt>
+<Chapters/Teori/Img/Figures.png, id=184, 333.245pt x 167.62625pt>
 File: Chapters/Teori/Img/Figures.png Graphic file (type png)
 
 <use Chapters/Teori/Img/Figures.png>
@@ -1361,6 +1361,113 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 39.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 39.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 39.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 39.
+[9
+
+
+]
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 40.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 40.
+ <Chapters/Matlab/Img/Filter_time.png, id=232, 421.575pt x 319.94531pt>
+File: Chapters/Matlab/Img/Filter_time.png Graphic file (type png)
+
+<use Chapters/Matlab/Img/Filter_time.png>
+Package pdftex.def Info: Chapters/Matlab/Img/Filter_time.png used on input line
+ 45.
+(pdftex.def)             Requested size: 400.0pt x 303.57529pt.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 49.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 49.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 49.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 49.
+ [10 <./Chapters/Matlab/Img/Filter_time.png>]
+<Chapters/Matlab/Img/Filter_Freq.png, id=239, 424.58624pt x 319.94531pt>
+File: Chapters/Matlab/Img/Filter_Freq.png Graphic file (type png)
+
+<use Chapters/Matlab/Img/Filter_Freq.png>
+Package pdftex.def Info: Chapters/Matlab/Img/Filter_Freq.png used on input line
+ 54.
+(pdftex.def)             Requested size: 400.0pt x 301.4321pt.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 58.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 58.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 58.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 58.
+ [11 <./Chapters/Matlab/Img/Filter_Freq.png>] <Chapters/Matlab/Img/Filter.png, 
+id=246, 423.08063pt x 318.43968pt>
+File: Chapters/Matlab/Img/Filter.png Graphic file (type png)
+
+<use Chapters/Matlab/Img/Filter.png>
+Package pdftex.def Info: Chapters/Matlab/Img/Filter.png used on input line 62.
+(pdftex.def)             Requested size: 400.0pt x 301.07771pt.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 66.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 66.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 66.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 66.
+ [12 <./Chapters/Matlab/Img/Filter.png>]
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 67.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 67.
+
+<Chapters/Matlab/Img/Filter_time_food.png, id=254, 422.32782pt x 320.69812pt>
+File: Chapters/Matlab/Img/Filter_time_food.png Graphic file (type png)
+
+<use Chapters/Matlab/Img/Filter_time_food.png>
+Package pdftex.def Info: Chapters/Matlab/Img/Filter_time_food.png used on input
+ line 73.
+(pdftex.def)             Requested size: 400.0pt x 303.7513pt.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 77.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 77.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 77.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 77.
+ [13 <./Chapters/Matlab/Img/Filter_time_food.png>]
+<Chapters/Matlab/Img/Filter_Freq_food.png, id=264, 422.32782pt x 320.69812pt>
+File: Chapters/Matlab/Img/Filter_Freq_food.png Graphic file (type png)
+
+<use Chapters/Matlab/Img/Filter_Freq_food.png>
+Package pdftex.def Info: Chapters/Matlab/Img/Filter_Freq_food.png used on input
+ line 83.
+(pdftex.def)             Requested size: 400.0pt x 303.7513pt.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 87.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 87.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 87.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 87.
+ [14 <./Chapters/Matlab/Img/Filter_Freq_food.png>]
+<Chapters/Matlab/Img/Filter_food.png, id=270, 422.32782pt x 317.68687pt>
+File: Chapters/Matlab/Img/Filter_food.png Graphic file (type png)
+
+<use Chapters/Matlab/Img/Filter_food.png>
+Package pdftex.def Info: Chapters/Matlab/Img/Filter_food.png used on input line
+ 91.
+(pdftex.def)             Requested size: 400.0pt x 300.89917pt.
 )
 Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 109.
@@ -1370,10 +1477,7 @@ Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 109.
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 109.
- [9
-
-
-]
+ [15 <./Chapters/Matlab/Img/Filter_food.png>]
 No file Projekt.bbl.
 Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 133.
@@ -1383,7 +1487,7 @@ Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 133.
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 133.
-[10
+[16
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
@@ -1394,7 +1498,7 @@ apters/Struktur/Struktur.aux) (Chapters/Teori/Teori.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `Projekt.out' has not changed.
-(rerunfilecheck)             Checksum: E48DCE919014CA750DADB577A971DB2C;898.
+(rerunfilecheck)             Checksum: 7E25B7B00F18379FD5AF05078BC49E83;1024.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1402,13 +1506,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
  ) 
 Here is how much of TeX's memory you used:
- 23763 strings out of 493328
- 425540 string characters out of 3139125
- 602977 words of memory out of 3000000
- 26746 multiletter control sequences out of 15000+200000
+ 23816 strings out of 493328
+ 426888 string characters out of 3139125
+ 603315 words of memory out of 3000000
+ 26778 multiletter control sequences out of 15000+200000
  14895 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,6n,92p,848b,1342s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,7n,92p,848b,1342s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:\Users\Soren\App
 Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/
@@ -1423,9 +1527,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/courier/ucrr8a.pfb>
-Output written on Projekt.pdf (11 pages, 2971830 bytes).
+Output written on Projekt.pdf (17 pages, 3085311 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 349 PDF objects out of 1000 (max. 8388607)
+ 88 named destinations out of 1000 (max. 500000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 
