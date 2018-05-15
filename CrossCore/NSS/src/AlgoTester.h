@@ -8,17 +8,17 @@
 #ifndef ALGOTESTER_H_
 #define ALGOTESTER_H_
 #include "Algorithm.h"
+#include <math.h>
 
 class AlgoTester {
 public:
 	AlgoTester(Algorithm *pAlgo);
 	//short runTestDyn(char *inFileName, char *outFileName, char *fftFileName);
-	short runTest(char *noiseName, char *desiredName, char *outFileName);
+	short runTest(char *noiseName, char *desiredName, char *outError, char *outYError);
 
 private:
-	short readSignal(short buffer[], short desiredSignal[], char *noise, char *desired);
-	short writeSignal(short buffer[], char *name);
-	short runTest(char *inFileName, char *outFileName);
+	short readSignal(short noiseBuffer[], short desiredSignalBuffer[], char *noiseName, char *desiredName);
+	short writeSignal(short filteredOutputBuffer[], char *FilteredOutput);
 
 	Algorithm *m_pAlgo;
 };

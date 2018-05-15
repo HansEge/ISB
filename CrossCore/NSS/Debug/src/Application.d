@@ -37,3 +37,20 @@ src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ S
 src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/stdfix_io.h
 src/Application.doj: ../src/Algorithm.h
 src/Application.doj: ../src/AlgoTester.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/math.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/ymath.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/math_bf.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/fract_math.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/fr2x16_math.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/fr2x16_base.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/r2x16_base.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/builtins.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/builtins_support.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/builtins.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/builtins_support.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/builtins.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/builtins_support.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/builtins.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/builtins_support.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/builtins.h
+src/Application.doj: ../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.7.0/Blackfin/include/sys/builtins_support.h

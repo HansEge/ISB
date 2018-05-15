@@ -1,4 +1,4 @@
-close all;
+%close all;
 load('output_signal.txt')
 %%load('y_signal.txt')
 
