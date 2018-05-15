@@ -91,7 +91,7 @@ all: DynFilter.dxe
 DynFilter.dxe: $(LDF_SRCS) $(SRC_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: CrossCore Blackfin Linker'
-	ccblkfn.exe -proc ADSP-BF533 -si-revision 0.6 -TC:/Users/stinu/Desktop/ISB/CrossCore/NSS/system/startup_ldf/app.ldf -no-mem -LC:/Users/stinu/Desktop/ISB/CrossCore/NSS/Debug/system/startup_ldf -flags-link -MDCORE0,-MDDEBUG -add-debug-libpaths -o DynFilter.dxe @input-file.txt  -flags-link -od,.\.
+	ccblkfn.exe -proc ADSP-BF533 -si-revision 0.6 -TC:/Users/stinu/OneDrive/Desktop/6.\ Semester/ISB/GIT/ISB/CrossCore/NSS/system/startup_ldf/app.ldf -no-mem -LC:/Users/stinu/OneDrive/Desktop/6.\ Semester/ISB/GIT/ISB/CrossCore/NSS/Debug/system/startup_ldf -flags-link -MDCORE0,-MDDEBUG -add-debug-libpaths -o DynFilter.dxe @input-file.txt  -flags-link -od,.\.
 	@echo 'Finished building target: $@'
 	@echo ' '
 
