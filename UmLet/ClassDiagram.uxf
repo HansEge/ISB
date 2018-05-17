@@ -22,8 +22,8 @@ Process
       <w>280</w>
       <h>100</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;class&gt;&gt;
-Algorithm
+    <panel_attributes>&lt;&lt;abstract class&gt;&gt;
+FilterAlgo
 -
 +process(short*, short*, short*, short): void
 +create(): void</panel_attributes>
@@ -54,7 +54,7 @@ LMSFilter
       <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;control&gt;&gt;
-Application
+Program
 </panel_attributes>
     <additional_attributes/>
   </element>

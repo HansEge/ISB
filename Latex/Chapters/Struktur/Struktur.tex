@@ -4,6 +4,8 @@
 
 \section{Struktur}
 
+\subsection{BlackFin blokforklaring}
+
 I dette projekt er der taget et valg udfra læringsmålene om at vi bruger Blackfin platformen til at udføre projektetes funktionalitet. Da en blackfin processor er bygget op af mange funktionalle blokke, vil der i det kommende afsnit laves et overblik over de hardware blokke som bliver brugt i dette projekt. \cite{Struktur}
 
 \begin{figure}[H]
@@ -23,3 +25,50 @@ De forskellige blokke i strukturen fra figur \ref{fig:LMS_filter}, er implemente
 
 \newpage
 
+\subsection{Software arkitektur}
+Til dette projekt har det været muligt at benytte et udleveret framework til Crosscore. Dette framework er lavet af Kim Bjerge, og er blevet modificeret af gruppen, til at virke med vores LMS filter. På \autoref{fig:Class diagram} kan man se hvilke klasser der er med og deres relationer til hinanden. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/ClassDiagram.png}
+	\caption{Klassediagram over NSS}
+	\label{fig:Class diagram}
+\end{figure}
+
+Arkitekturen består af en abstrakt klasse FilterAlgo som har to funktioner, process() og create(). Disse to nedarves af LMSFilter klassen og implementeres heri. Create() bliver kaldt først i main og nulstiller alle koefficienter, udover den første som bliver sat til 1. Grunden til dette er for at få det fulde støjsignal igennem første gang filteret kører. Dette vil blive uddybet mere i diskusion afsnittet. process() funktionen står for at filtrer uønsket støj fra vores tale signal(d(n)). Koden er lavet så den følger vores matlab model så godt som overhovedet muligt. Dette kan også ses i \autoref{code:LMSFilter}
+
+\newpage
+
+
+\begin{lstlisting}
+for(short i = 0; i < len; i++)
+{
+	long fract yn = 0;
+
+	for(short j = 0; j < NUM_WEIGTHS; j++)
+	{
+		if(i > j)
+		{
+			yn = yn + Filter.W[j]*x[i-j];
+		}
+	}
+	y[i] = (fract)yn;
+	e[i] = d[i] - yn;
+		
+	long fract tmp_W = 0;
+		
+	for(short k = 0; k < NUM_WEIGTHS; k++)
+	{
+		if(i > k)
+		{
+			Filter.W[k] = Filter.W[k]  + my*x[i-k]*e[i];
+		}
+	}
+}
+\end{lstlisting}
+\label{code:LMSFilter}
+
+For at forsimple koden har vi valgt at splitte vores stereo kanal op i to, så det er muligt at få støjsignalet(x(n)) ind på højre kanal og tale signal(d(n)) ind på venstre kanal.
+
+Vi har valgt ikke at implementere controller klassen, da vores 1. prioritet har været at få et fungerende LMS filter. Derfor står den som "NOT IMPLEMENTED". Istedet for at brugeren kan tænde for filteret med en switch, har vi valgt at lade filteret være aktiv så snart man starter programmet. 
