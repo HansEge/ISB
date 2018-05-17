@@ -18,7 +18,11 @@ f3 = 2750;
 fs = 44100;
 A = 0.01;
 ts = 1/fs;
+<<<<<<< HEAD
+T = 3; %% 0.02321 = 1024
+=======
 T = 0.02337;
+>>>>>>> dc03ba8729bb60d084eb9d6546f37526442154e4
 t = 0:ts:T;
 
 s1 = A*sin(2*pi*f1*t);
@@ -30,8 +34,13 @@ s3 = A*sin(2*pi*f3*t);
 s = s1+s2+s3; % Vores ønsket signal
 
 ALI_G = ALI_G(230001:length(s)+230000); %Bruges når s er støjen
+<<<<<<< HEAD
+%ALI_G = ALI_G(230001:481600); %Bruges når StarshipNoise er støjen
+%ALI_G = ALI_G(230001:length(food)+230000); %Bruges når food er støjen
+=======
 %ALI_G = ALI_G(160001:481600); %Bruges når StarshipNoise er støjen
 %ALI_G = ALI_G(160001:length(food)+160000); %Bruges når food er støjen
+>>>>>>> dc03ba8729bb60d084eb9d6546f37526442154e4
 
 food = food';
 %StarshipNoise = StarshipNoise(1:length(ALI_G));
@@ -65,6 +74,7 @@ fclose(fid);
 %Create LMS FIR filter
 my = 0.01; % some number 0.01
 W = zeros(1,256);
+%W(1) = 1;
 
 for n = 1:length(d) %run every sample 
     yn = 0;
@@ -86,11 +96,16 @@ freqz(W,1);
 
 t2 = 0:length(y)-1;
 figure
-subplot(221),plot(t2,d),ylabel('Desired Signal'),
-subplot(222),plot(t2,noise),ylabel('Noise'),
-subplot(223),plot(t2,e),ylabel('Error'),
-subplot(224),plot(t2,y),ylabel('Adaptive Desired output');
 
+% subplot(221),plot(t2,d),ylabel('Desired Signal'),
+% subplot(222),plot(t2,noise),ylabel('Noise'),
+% subplot(223),plot(t2,e),ylabel('Error'),
+% subplot(224),plot(t2,y),ylabel('Adaptive Desired output');
+
+subplot(221),plot(t2,d),ylabel('d(n)'),
+subplot(222),plot(t2,noise),ylabel('x(n)'),
+subplot(223),plot(t2,e),ylabel('e(n)'),
+subplot(224),plot(t2,y),ylabel('y(n)');
 
 % N = length(y);
 % array_y = (0:N-1)*e/N;
@@ -102,10 +117,10 @@ N = length(d);
 freqHz = (0:1:length(abs(fft(d)))-1)*fs/N;
 
 figure
-subplot(221),plot(freqHz,abs(fft(d))),ylabel('Desired Signal'),
-subplot(222),plot(freqHz,abs(fft(noise))),ylabel('Noise'),
-subplot(223),plot(freqHz,abs(fft(e))),ylabel('Error'),
-subplot(224),plot(freqHz,abs(fft(y))),ylabel('Adaptive Desired output');
+subplot(221),plot(freqHz,abs(fft(d))),ylabel('d(n)'),
+subplot(222),plot(freqHz,abs(fft(noise))),ylabel('x(n)'),
+subplot(223),plot(freqHz,abs(fft(e))),ylabel('e(n)'),
+subplot(224),plot(freqHz,abs(fft(y))),ylabel('y(n)');
 
 figure
 plot(freqHz,abs(fft(e))),ylabel('e')
