@@ -96,7 +96,38 @@ Herefter tager vi et blik på frekvens donænet som viser lidt det samme billede
 \end{figure}
 
 \subsection{Cross-core}
+\subsubsection{Overordnet}
+Gruppen har valgt at lave test ud fra funktionalitet frem for use cases, da mange af use casene ikke vil godkendes, og derfor giver en forklaring af testene mere mening. 
+ 
+\subsubsection{Visuel test}
 Cross-core er et IDE, som kan programmere software over på blackfin proccesoren. Herigennem er der lavet embedded software, som styre forbindelserne på blackfin, samtidig med at vi udfører projektets funktionalitet. Igennem undervisnignen er der blevet henvist til signal proccesering framework, som også gøres brug af i denne opgave. 
 
 Gennem denne test var der flere ting som udfordrede funktionaliteten , og sammenligningsgrundlaget ift matlab simuleringen. 
 Da det nemmeste at sammenligne med er grafer og figurer, blev vi nød til at udskrive txt filer fra blackfin, som udskrev hver sample. Da blackfin har et begrænset memory, kunne vi dog kun have 1024 sample gemt, hvilket er et meget kort lydsignal. Dette var især en ulempe, da matlab modellen var bygget op af lydsignaler med en længde på 268723 samples. Dette gør en signifikant forskel. 
+Hvis vi kigger på figur \ref{fig:Blackfin}, ser vi den realiserede proces med 3 toner, som også blev brugt i matlab modellen. Dette er valgt da det visuelt er meget nemmere at se på en graf frem for støj fra en food processor.
+Hvis der sammnelignes med de første 1024 samples i matlab figur \ref{fig:Blackfin_simulering}, ser vi at matlab ikke filtrerer sinus tonerne fra som ved realiseringen på blackfin. Det skal med at skaleringen af tidssignalerne fra blackfin og matlab, ikke er den samme, dette skyldes fixedpoint, og at en txt fil kun kan have integer værdier. Det har dog ingen indflydelse på resultaterne, da skaleringen er den samme. Ydermere er der også ændret i koden, så første værdi er 1 og ikke 0, mere om det emne i diskussionen. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/Blackfin}
+	\caption{LMS filter implementeret på Blackfin}
+	\label{fig:Blackfin}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/Blackfin_simulering}
+	\caption{Simulering af figur \ref{fig:Blackfin} i matlab}
+	\label{fig:Blackfin_simulering}
+\end{figure}
+\newpage
+Hvis vi kigger nærmere på matlab simlueringen, af de samme signal og samme antal samples, undrer gruppen sig over hvordan det kan være at  matlab modellen bliver markant anderledes, og ikke ser ud til at virke efter hensigten. Dette kommer især til udtryk hvis vi kigger på figur \ref{fig:Tjek_af_frek}, hvor vi ser at frekvensen fra y(n) burde bliver trukket fra d(n), det ser dog ikke ud til at virke efter hensigten. Dette emne vil kort blive taget op i diskussionen igen. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/Tjek_af_frek}
+	\caption{Fejl fra matlab filter}
+	\label{fig:Tjek_af_frek}
+\end{figure}
+
+\subsubsection{Audio Test}
+Gruppen har gennem testen lavet en audio test, hvor både sinus toner så vel som food processoren er blevet testet. 
+Produktet og derved lyden virker til en vis grad igennem blackfin processoren. Hvis der sendes 3 sinus toner som både støj og implementeret i talesignalet, opleves at sinus tonerne fjernes, dog tilføres en "klik" lyd, som vil forsøges forklaret i diskusionen. Hvis vi derimod sender food processoren ind som støj og implementerer det i talesignal, bliver lyden forvrænget og filtrering af fejlen har ikke den ønskede funktionalitet ift at fjerne støjen. Dette vil igen blive diskuteret i diskussionen. 
