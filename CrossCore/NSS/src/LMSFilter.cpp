@@ -65,5 +65,5 @@ void LMSFilter::create()
 	for (short i = 0; i < NUM_WEIGTHS; i++) {
 			Filter.W[i] = 0;
 		}
-		Filter.W[0] = FRACT_MAX;
+		//Filter.W[0] = FRACT_MAX;
 }
