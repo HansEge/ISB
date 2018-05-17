@@ -4,12 +4,12 @@
 //  Created on:      06-aug-2014 09:30:58
 //  Original author: kbe
 ///////////////////////////////////////////////////////////
+#include "FilterAlgo.h"
 #include "HAL.h"
-#include "Algorithm.h"
 
-Algorithm *pAlgo = 0;
+FilterAlgo *pAlgo = 0;
 
-void InitProcess(Algorithm *algo)
+void InitProcess(FilterAlgo *algo)
 {
 	pAlgo = algo;
 }

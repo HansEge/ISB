@@ -9,9 +9,10 @@
 #define LMSFILTER_H_
 
 #include <stdfix.h>
-#include "Algorithm.h"
 
-#define NUM_WEIGTHS 16
+#include "FilterAlgo.h"
+
+#define NUM_WEIGTHS 32
 
 
 typedef struct
@@ -24,7 +25,7 @@ typedef struct
 } LMS_COEFS;
 
 
-class LMSFilter : public Algorithm
+class LMSFilter : public FilterAlgo
 {
 	public:
 		LMSFilter();

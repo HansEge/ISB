@@ -30,7 +30,7 @@ void LMSFilter::process(short* noise, short* desiredSignal, short* output, short
 	fract *d = (fract *)desiredSignal;
 	fract *y = (fract *)y_buffer;
 
-	long fract my = 0.004;
+	long fract my = 0.01;
 
 	for(short i = 0; i < len; i++)
 	{
@@ -65,5 +65,5 @@ void LMSFilter::create()
 	for (short i = 0; i < NUM_WEIGTHS; i++) {
 			Filter.W[i] = 0;
 		}
-		Filter.W[0] = FRACT_MAX;
+		//Filter.W[0] = FRACT_MAX;
 }

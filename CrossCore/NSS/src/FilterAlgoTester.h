@@ -5,14 +5,14 @@
  *      Author: Kim Bjerge
  */
 
-#ifndef ALGOTESTER_H_
-#define ALGOTESTER_H_
-#include "Algorithm.h"
+#ifndef FILTERALGOTESTER_H_
+#define FILTERALGOTESTER_H_
 #include <math.h>
+#include "FilterAlgo.h"
 
-class AlgoTester {
+class FilterAlgoTester {
 public:
-	AlgoTester(Algorithm *pAlgo);
+	FilterAlgoTester(FilterAlgo *pAlgo);
 	//short runTestDyn(char *inFileName, char *outFileName, char *fftFileName);
 	short runTest(char *noiseName, char *desiredName, char *outError, char *outYError);
 
@@ -20,8 +20,8 @@ private:
 	short readSignal(short noiseBuffer[], short desiredSignalBuffer[], char *noiseName, char *desiredName);
 	short writeSignal(short filteredOutputBuffer[], char *FilteredOutput);
 
-	Algorithm *m_pAlgo;
+	FilterAlgo *m_pAlgo;
 };
 
-#endif /* ALGOTESTER_H_ */
+#endif /* FILTERALGOTESTER_H_ */
 
