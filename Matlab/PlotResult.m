@@ -1,24 +1,39 @@
-%close all;
+close all;
 load('output_signal.txt')
-%%load('y_signal.txt')
+load('YError_signal.txt')
 
 Fs = 44100;
+
+figure
+len = size(YError_signal,1);
+plot(YError_signal(1:len))
+title('Sweep input');
+xlabel('n');
+ylabel('y(n)');
 
 figure
 len = size(output_signal,1);
 plot(output_signal(1:len))
 title('Sweep input');
 xlabel('n');
-ylabel('x(n)');
+ylabel('e(n)');
 
 t2 = 0:length(output_signal)-1;
 N = length(output_signal);
 
-freqHz = (0:1:length(abs(fft(output_signal)))-1)*Fs/N
+freqHz1 = (0:1:length(abs(fft(output_signal)))-1)*Fs/N
+freqHz2 = (0:1:length(abs(fft(YError_signal)))-1)*Fs/N
 
-plot(freqHz,abs(fft(output_signal)))
+figure
+plot(freqHz1,abs(fft(output_signal)))
+
+figure
+plot(freqHz1,abs(fft(YError_signal)))
 
 soundsc(output_signal,44100)
+
+
+
 
 
 % subplot(2,1,2);
