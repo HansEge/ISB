@@ -70,7 +70,7 @@ fclose(fid);
 %%
 %Create LMS FIR filter
 my = 0.01; % some number 0.01
-W = zeros(1,16);
+W = zeros(1,32);
 W(1) = 1;
 
 for n = 1:length(d) %run every sample 
