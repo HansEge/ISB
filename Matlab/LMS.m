@@ -18,11 +18,11 @@ f3 = 2750;
 fs = 44100;
 A = 0.01;
 ts = 1/fs;
-<<<<<<< HEAD
+
 T = 3; %% 0.02321 = 1024
-=======
-T = 0.02337;
->>>>>>> dc03ba8729bb60d084eb9d6546f37526442154e4
+
+
+
 t = 0:ts:T;
 
 s1 = A*sin(2*pi*f1*t);
@@ -34,13 +34,10 @@ s3 = A*sin(2*pi*f3*t);
 s = s1+s2+s3; % Vores ønsket signal
 
 ALI_G = ALI_G(230001:length(s)+230000); %Bruges når s er støjen
-<<<<<<< HEAD
+
 %ALI_G = ALI_G(230001:481600); %Bruges når StarshipNoise er støjen
 %ALI_G = ALI_G(230001:length(food)+230000); %Bruges når food er støjen
-=======
-%ALI_G = ALI_G(160001:481600); %Bruges når StarshipNoise er støjen
-%ALI_G = ALI_G(160001:length(food)+160000); %Bruges når food er støjen
->>>>>>> dc03ba8729bb60d084eb9d6546f37526442154e4
+
 
 food = food';
 %StarshipNoise = StarshipNoise(1:length(ALI_G));
@@ -74,7 +71,7 @@ fclose(fid);
 %Create LMS FIR filter
 my = 0.01; % some number 0.01
 W = zeros(1,256);
-%W(1) = 1;
+W(1) = 1;
 
 for n = 1:length(d) %run every sample 
     yn = 0;
