@@ -1,6 +1,6 @@
 close all;
-load('output_signal.txt')
-load('YError_signal.txt')
+load('output_signal_0.txt')
+load('YError_signal_0.txt')
 
 Fs = 44100;
 

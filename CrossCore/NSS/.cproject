@@ -72,9 +72,7 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="blackfin.toolchain.configuration.debug.140834658.571423841" name="DynamicFilterSolution.cpp" rcbsApplicability="disable" resourcePath="src/DynamicFilterSolution.cpp" toolsToInvoke="blackfin.toolchain.compiler.1324015554.1260874354">
-						<tool id="blackfin.toolchain.compiler.1324015554.1260874354" name="CrossCore Blackfin C/C++ Compiler" superClass="blackfin.toolchain.compiler.1324015554"/>
-					</fileInfo>
+					<fileInfo id="blackfin.toolchain.configuration.debug.140834658.628093025" name="Algorithm.h" rcbsApplicability="disable" resourcePath="src/Algorithm.h" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry excluding="system|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
@@ -181,4 +179,5 @@
 		</project-mappings>
 	</storageModule>
 	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>
