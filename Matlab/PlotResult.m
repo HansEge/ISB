@@ -1,38 +1,43 @@
 close all;
-load('output_signal_0.txt')
-load('YError_signal_0.txt')
+load('output_signal_1.txt')
+load('YError_signal_1.txt')
 
 Fs = 44100;
 
 figure
-len = size(YError_signal,1);
-plot(YError_signal(1:len))
+len = size(YError_signal_1,1);
+plot(YError_signal_1(1:len))
 title('Sweep input');
 xlabel('n');
 ylabel('y(n)');
 
 figure
-len = size(output_signal,1);
-plot(output_signal(1:len))
+len = size(output_signal_1,1);
+plot(output_signal_1(1:len))
 title('Sweep input');
 xlabel('n');
 ylabel('e(n)');
 
-t2 = 0:length(output_signal)-1;
-N = length(output_signal);
+t2 = 0:length(output_signal_1)-1;
+N = length(output_signal_1);
 
-freqHz1 = (0:1:length(abs(fft(output_signal)))-1)*Fs/N
-freqHz2 = (0:1:length(abs(fft(YError_signal)))-1)*Fs/N
-
-figure
-plot(freqHz1,abs(fft(output_signal)))
+freqHz1 = (0:1:length(abs(fft(output_signal_1)))-1)*Fs/N
+freqHz2 = (0:1:length(abs(fft(YError_signal_1)))-1)*Fs/N
 
 figure
-plot(freqHz1,abs(fft(YError_signal)))
+plot(freqHz1,abs(fft(output_signal_1)))
 
-soundsc(output_signal,44100)
+figure
+plot(freqHz2,abs(fft(YError_signal_1)))
+
+soundsc(output_signal_1,44100)
 
 
+figure
+subplot(221),plot(output_signal_1(1:len)),title('Output tid'),
+subplot(222),plot(YError_signal_1(1:len)),title('y(n) param tid'),
+subplot(223),plot(freqHz1,abs(fft(output_signal_1))),title('Output frek'),
+subplot(224),plot(freqHz2,abs(fft(YError_signal_1))),title('y(n) param frek');
 
 
 
