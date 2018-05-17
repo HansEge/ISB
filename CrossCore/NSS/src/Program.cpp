@@ -13,11 +13,11 @@
 #include "ccblkfn.h" //definition of built-in function
 					 //  in this program:sysreg_write()
 #include "Controller.h"
-#include "AlgoTester.h"
+#include "FilterAlgoTester.h"
 #include "LMSFilter.h"
 
 // Initialization of sample block processing inputs
-void InitProcess(Algorithm *algo);
+void InitProcess(FilterAlgo *algo);
 // Initialization of control for switch inputs
 void InitSwitch(Controller *left, Controller *right);
 
@@ -53,7 +53,7 @@ void main(void)
 	sysreg_write(reg_SYSCFG, 0x32); //Enable 64-bit,free-running cycle-counter
 		  			     	   		//BF533 Hardware Reference pg 4-6 NB!!!
 
-#if 1 // TODO Set to 1 for testing
+#if 0 // TODO Set to 1 for testing
 	InitAlgoProcess(); // Initialization of processing algorithms
 	//FilterLeft.updateDynFilter();
 	AlgoTester algoTest(&Filter);

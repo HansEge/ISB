@@ -5,14 +5,14 @@
 //  Original author: kbe
 ///////////////////////////////////////////////////////////
 
-#include "Algorithm.h"
+#include "FilterAlgo.h"
 
-Algorithm::Algorithm()
+FilterAlgo::FilterAlgo()
 {
 
 }
 
-Algorithm::~Algorithm()
+FilterAlgo::~FilterAlgo()
 {
 
 }

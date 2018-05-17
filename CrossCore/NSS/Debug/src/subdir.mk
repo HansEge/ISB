@@ -8,23 +8,23 @@ C_SRCS += \
 ../src/Init.c 
 
 CPP_SRCS += \
-../src/AlgoTester.cpp \
-../src/Algorithm.cpp \
-../src/Application.cpp \
 ../src/Controller.cpp \
+../src/FilterAlgo.cpp \
+../src/FilterAlgoTester.cpp \
 ../src/LMSFilter.cpp \
 ../src/Process.cpp \
+../src/Program.cpp \
 ../src/Switch.cpp 
 
 SRC_OBJS += \
-./src/AlgoTester.doj \
-./src/Algorithm.doj \
-./src/Application.doj \
 ./src/Controller.doj \
+./src/FilterAlgo.doj \
+./src/FilterAlgoTester.doj \
 ./src/ISR.doj \
 ./src/Init.doj \
 ./src/LMSFilter.doj \
 ./src/Process.doj \
+./src/Program.doj \
 ./src/Switch.doj 
 
 C_DEPS += \
@@ -32,76 +32,76 @@ C_DEPS += \
 ./src/Init.d 
 
 CPP_DEPS += \
-./src/AlgoTester.d \
-./src/Algorithm.d \
-./src/Application.d \
 ./src/Controller.d \
+./src/FilterAlgo.d \
+./src/FilterAlgoTester.d \
 ./src/LMSFilter.d \
 ./src/Process.d \
+./src/Program.d \
 ./src/Switch.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-src/AlgoTester.doj: ../src/AlgoTester.cpp
-	@echo 'Building file: $<'
-	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
-	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/AlgoTester.d" -c++ -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-src/Algorithm.doj: ../src/Algorithm.cpp
-	@echo 'Building file: $<'
-	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
-	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Algorithm.d" -c++ -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-src/Application.doj: ../src/Application.cpp
-	@echo 'Building file: $<'
-	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
-	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Application.d" -c++ -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
-
 src/Controller.doj: ../src/Controller.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
-	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Controller.d" -c++ -o "$@" "$<"
+	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-33056c27383c802a3e0f63830f26a559.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Controller.d" -c++ -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/FilterAlgo.doj: ../src/FilterAlgo.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
+	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-33056c27383c802a3e0f63830f26a559.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/FilterAlgo.d" -c++ -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/FilterAlgoTester.doj: ../src/FilterAlgoTester.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
+	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-33056c27383c802a3e0f63830f26a559.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/FilterAlgoTester.d" -c++ -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/ISR.doj: ../src/ISR.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
-	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/ISR.d" -o "$@" "$<"
+	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-33056c27383c802a3e0f63830f26a559.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/ISR.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/Init.doj: ../src/Init.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
-	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Init.d" -o "$@" "$<"
+	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-33056c27383c802a3e0f63830f26a559.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Init.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/LMSFilter.doj: ../src/LMSFilter.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
-	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/LMSFilter.d" -c++ -o "$@" "$<"
+	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-33056c27383c802a3e0f63830f26a559.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/LMSFilter.d" -c++ -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/Process.doj: ../src/Process.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
-	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Process.d" -c++ -o "$@" "$<"
+	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-33056c27383c802a3e0f63830f26a559.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Process.d" -c++ -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/Program.doj: ../src/Program.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
+	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-33056c27383c802a3e0f63830f26a559.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Program.d" -c++ -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/Switch.doj: ../src/Switch.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore Blackfin C/C++ Compiler'
-	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-9cecde0861ec8465294c6fef4f8d494d.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Switch.d" -c++ -o "$@" "$<"
+	ccblkfn.exe -c -file-attr ProjectName="DynFilter" -proc ADSP-BF533 -flags-compiler --no_wrap_diagnostics -si-revision 0.6 -g -DCORE0 -D_DEBUG @includes-33056c27383c802a3e0f63830f26a559.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -D__PROCESSOR_SPEED__=600000000 -double-size-32 -decls-strong -cplbs -gnu-style-dependencies -MD -Mo "src/Switch.d" -c++ -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

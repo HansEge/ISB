@@ -8,12 +8,12 @@
 #if !defined(ALGORITHM_INCLUDED_)
 #define ALGORITHM_INCLUDED_
 
-class Algorithm
+class FilterAlgo
 {
 
 public:
-	Algorithm();
-	virtual ~Algorithm();
+	FilterAlgo();
+	virtual ~FilterAlgo();
 
 	//virtual void process(short* NoiseInput, short* DesiredInput, output, short len) = 0;
 	virtual void process(short* inLeft, short* inRight, short* output, short len) = 0;
