@@ -12,9 +12,8 @@ b * AlgoTester.cpp
 #include "AlgoTester.h"
 #include "LMSFilter.h"
 
-
 // Fixed signal size must be manually changed
-#define N 1024  // Test signal length
+#define N 2048  // Test signal length
 
 // Test signal used for testing made as global variables for plotting
 //section("L1_data_a")
@@ -24,7 +23,6 @@ short DesiredSignal[N];// Test desired signal loaded from .txt file
 //section("L1_data_a")
 short OutputSignal[N]; // Result after processing test signal with m_pAlgo
 
-short y_buffer[N];
 
 AlgoTester::AlgoTester(Algorithm *pAlgo)
 {
@@ -64,7 +62,7 @@ short AlgoTester::readSignal(short noiseBuffer[], short desiredSignalBuffer[], c
 	return error;
 }
 
-short AlgoTester::writeSignal(short filteredOutputBuffer[], char *FilteredOutput)
+short AlgoTester::writeSignal(short filteredOutpurBuffer[], short yNoiseBuffer[], char *FilteredOutput, char *NoiseOutput)
 {
 	short error = -1;
 	FILE *fp;
@@ -73,12 +71,25 @@ short AlgoTester::writeSignal(short filteredOutputBuffer[], char *FilteredOutput
 	if (fp)
 	{
 		for(short n=0; n < N; n++)
-			fprintf(fp, "%hd,\n", filteredOutputBuffer[n]);
+			fprintf(fp, "%hd,\n", filteredOutpurBuffer[n]);
 		fclose(fp);
 		error = 0;
 	}
+
+	fp = NULL;
+
+	fp=fopen(NoiseOutput, "w");
+	if (fp)
+	{
+		for(short n=0; n < N; n++)
+			fprintf(fp, "%hd,\n", yNoiseBuffer[n]);
+		fclose(fp);
+		error = 0;
+	}
+
 	return error;
 }
+
 
 short AlgoTester::runTest(char *noiseName, char *desiredName, char *outError, char *outYError)
 {
@@ -93,16 +104,71 @@ short AlgoTester::runTest(char *noiseName, char *desiredName, char *outError, ch
 		m_pAlgo->process(NoiseSignal, DesiredSignal, OutputSignal, N);
 
 		// Writing result from OutputSignal to outFileName
-		error = writeSignal(OutputSignal,outError);
-		error = writeSignal(y_buffer, outYError);
+		error = writeSignal(OutputSignal, outFileName);
 
 		if (error == 0)
-			printf("Result signal of %d samples saved in %s \n", N, outError);
+			printf("Result signal of %d samples saved in %s \n", N, outFileName);
 		else
-			printf("Error writing result to file %s \n", outError);
+			printf("Error writing result to file %s \n", outFileName);
 	}
 	else
-		printf("Error reading file %s with input test signal\n", outError);
+		printf("Error reading file %s and %s with input test signal\n", noiseName, desiredName);
 
 	return error;
 }
+
+/*
+short AlgoTester::runTestDyn(char *inFileName, char *outFileName, char *fftFileName)
+{
+	short error;
+	short *pMagnitudes;
+	DynamicFilter *pDynFilter;
+
+	// Reading test signal in inFileName
+	error = readSignal(TestSignal, inFileName);
+=======
+short AlgoTester::runTest(char *inFileName, char *outFileName)
+{
+	// Reading test signal in inFileName
+	short error = readSignal(TestSignal, inFileName);
+>>>>>>> 6fa30427fae59f1a367d7ab5f935000e6fcce47e
+	if (error == 0)
+	{
+		// Test file loaded into TestSignal
+		printf("Testing algorithm - input file %s with signal of %d samples\n", inFileName, N);
+
+		// Processing algorithm on TestSignal
+		m_pAlgo->process(TestSignal, OutputSignal, N);
+
+		// Writing result from OutputSignal to outFileName
+		error = writeSignal(OutputSignal, outFileName);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6fa30427fae59f1a367d7ab5f935000e6fcce47e
+		if (error == 0)
+			printf("Result signal of %d samples saved in %s \n", N, outFileName);
+		else
+			printf("Error writing result to file %s \n", outFileName);
+<<<<<<< HEAD
+
+		// Read FFT magnitude response
+		pDynFilter = (DynamicFilter*)m_pAlgo;
+		pMagnitudes = (short*)pDynFilter->getMagnitudeResponse();
+
+		// Writing result from pMagnitude to outFileName
+		error = writeSignal(pMagnitudes, fftFileName);
+		if (error == 0)
+			printf("FFT magnitude of %d samples saved in %s \n", N, fftFileName);
+		else
+			printf("Error writing result to file %s \n", fftFileName);
+=======
+>>>>>>> 6fa30427fae59f1a367d7ab5f935000e6fcce47e
+	}
+	else
+		printf("Error reading file %s with input test signal\n", inFileName);
+
+	return error;
+}
+<<<<<<< HEAD
+*/
