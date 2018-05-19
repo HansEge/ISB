@@ -35,7 +35,7 @@ Først i filteret vælger vi en my, som ift til teori afsnittet bestemmer hvor h
 
 Igennem genereringen af filteret laves der 3 forloop. Et som kører hver sample igennem, et som laver det filtrede nye sample, og et som opdaterer koefficinterne ift tilbagekoblingen. \\
 De nye filter koefficienter bliver herved opdateret til det ønskede filter, hvor e(n) bliver fejlen ift figur \ref{fig:LMS_filter}, som er det talesignal der ønskes. \\
-Koden er bygget op sådan at vi kører en fixed16 og fixed32, for at simulere det bedst muligt ift blackfin. Fixed16 svarer til fixed point 1.15 og fixed32 til fixed point 1.31. 
+Koden er bygget op sådan at vi kører en fixed16() og fixed32(), for at simulere det bedst muligt ift blackfin. Fixed16 svarer til fixed point 1.15 og fixed32 til fixed point 1.31. 
 \\
 Dette giver os et filter som fungerer efter hensigten. Først testes der med 3 sinus toner, som ligger indover et tale signal, disse 3 toner skal derved gerne blive filtreret gennem filteret. 
 \newpage
@@ -49,7 +49,7 @@ Figur \ref{fig:Filter_time} viser signalet som bliver filtreret i tidsdomænet. 
 	\label{fig:Filter_time}
 \end{figure}
 \newpage
-Herefter vises på figur \ref{fig:Filter_Freq} signalet i frekvens domænet, her ses hvordan filteret filtrere den fejl som skabes fra, og derved skaber et signal e(n), som er talesignalet uden sinus tonerne. 
+Herefter vises på figur \ref{fig:Filter_Freq} signalet i frekvens domænet, her ses hvordan filteret filtrere den fejl som skabes fra, og derved skaber et signal e(n), som er talesignalet med dæmpet sinus tonerne. 
 
 \begin{figure}[H]
 	\centering
@@ -58,7 +58,7 @@ Herefter vises på figur \ref{fig:Filter_Freq} signalet i frekvens domænet, her
 	\label{fig:Filter_Freq}
 \end{figure}
 \newpage
-Ved at kigge på selve filteret ses at filteret (figur \ref{fig:Filter}) skaber et filter som kune lukker de 3 sinus toner igennem, hvilket er hensigten. Dette signal bliver så fratrukket det endelige samlede signal, for at få en error som er det endelige e(n). 
+Ved at kigge på selve filteret ses at filteret (figur \ref{fig:Filter}) skaber et filter som kun lukker de 3 sinus toner igennem, hvilket er hensigten. Dette signal bliver så fratrukket det endelige samlede signal, for at få en error som er det endelige e(n). 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width = 400pt]{Img/Filter}
@@ -67,7 +67,7 @@ Ved at kigge på selve filteret ses at filteret (figur \ref{fig:Filter}) skaber 
 \end{figure}
 \newpage
 \subsubsection{Anden test}
-Første test var i den nemme og simple ende, da vi kun skulle filtrere rene toner fra, vil der i anden test forsøges at filtere en foodprocessor som bekrevet i indledningen. Denne opgave en del mere udfordrende for filteret da den nu skal filtrere på mange toner og ikke kune 3, samtidig med den skal lade nogle bestemte toner gå igennem, som kommer fra talesignalet. \\
+Første test var i den nemme og simple ende, da vi kun skulle filtrere rene toner fra. Der vil i anden test forsøges at filtere en foodprocessor som bekrevet i indledningen. Denne opgave en del mere udfordrende for filteret da den nu skal filtrere mange toner og ikke kune 3, samtidig med den skal lade nogle bestemte toner gå igennem, som kommer fra talesignalet. \\
 På figur \ref{fig:Filter_time_food}, ses nu det endelige produkt i tidsdomænet, der ses her en kraftig filtrering af signalet fra d(n) til e(n). Igen ser vi også en y(n) der har en settling time, inden filteret begynder at virke efter hensigten. 
 
 \begin{figure}[H]
@@ -78,7 +78,7 @@ På figur \ref{fig:Filter_time_food}, ses nu det endelige produkt i tidsdomænet
 \end{figure}
 \newpage
 
-Herefter tager vi et blik på frekvens donænet som viser lidt det samme billede som tidsdomænet, at LMS filteret filtrerer kraftigt fra d(n) til e(n), dette kommer af at foodprocessoren er indeholder mange lydfrekvenser. Hvis vi kigger lidt på figur \ref{fig:Filter_Freq_food}, og figur \ref{fig:Filter_food}, kan man nærstudere figur \ref{fig:Filter_food}, og se at filteret fungerer bedst når frekvenserne er udenfor talefrekvenserne, dette betyder også at filteret ikke prøve at filtrere støj fra som ligger i tale signalet, dette kan vi se fra figur \ref{fig:Filter_food}.
+Herefter tager vi et blik på frekvens donænet som viser lidt det samme billede som tidsdomænet, at LMS filteret filtrerer kraftigt fra d(n) til e(n), dette kommer af at foodprocessoren indeholder mange frekvenser. Hvis vi kigger lidt på figur \ref{fig:Filter_Freq_food}, og figur \ref{fig:Filter_food}, kan man nærstudere figur \ref{fig:Filter_food}, og se at filteret fungerer bedst når frekvenserne er udenfor talefrekvenserne, dette betyder også at filteret ikke prøver at filtrere støj fra som ligger i tale signalet, dette kan vi se fra figur \ref{fig:Filter_food}.
 
 \begin{figure}[H]
 	\centering
@@ -100,10 +100,10 @@ Herefter tager vi et blik på frekvens donænet som viser lidt det samme billede
 Gruppen har valgt at lave test ud fra funktionalitet frem for use cases, da mange af use casene ikke vil godkendes, og derfor giver en forklaring af testene mere mening. 
  
 \subsubsection{Visuel test}
-Cross-core er et IDE, som kan programmere software over på blackfin proccesoren. Herigennem er der lavet embedded software, som styre forbindelserne på blackfin, samtidig med at vi udfører projektets funktionalitet. Igennem undervisnignen er der blevet henvist til signal proccesering framework, som også gøres brug af i denne opgave. 
+Cross-core er et IDE, som kan programmere software over på blackfin proccesoren. Herigennem er der lavet embedded software, som styre forbindelserne på blackfin, samtidig med at vi udfører NSS's funktionalitet. Igennem undervisnignen er der blevet henvist til signal proccesering framework, som også gøres brug af i denne opgave. 
 
 Gennem denne test var der flere ting som udfordrede funktionaliteten , og sammenligningsgrundlaget ift matlab simuleringen. 
-Da det nemmeste at sammenligne med er grafer og figurer, blev vi nød til at udskrive txt filer fra blackfin, som udskrev hver sample. Da blackfin har et begrænset memory, kunne vi dog kun have 1024 sample gemt, hvilket er et meget kort lydsignal. Dette var især en ulempe, da matlab modellen var bygget op af lydsignaler med en længde på 268723 samples. Dette gør en signifikant forskel. 
+Da det er nemmest at sammenligne med er grafer og figurer, blev vi nød til at udskrive txt filer fra blackfin, som udskrev hver sample. Da blackfin har et begrænset memory, kunne vi dog kun have 1024 sample gemt, hvilket er et meget kort lydsignal. Dette var især en ulempe, da matlab modellen var bygget op af lydsignaler med en længde på 268723 samples. Dette gør en signifikant forskel. 
 Hvis vi kigger på figur \ref{fig:Blackfin}, ser vi den realiserede proces med 3 toner, som også blev brugt i matlab modellen. Dette er valgt da det visuelt er meget nemmere at se på en graf frem for støj fra en food processor.
 Hvis der sammnelignes med de første 1024 samples i matlab figur \ref{fig:Blackfin_simulering}, ser vi at matlab ikke filtrerer sinus tonerne fra som ved realiseringen på blackfin. Det skal med at skaleringen af tidssignalerne fra blackfin og matlab, ikke er den samme, dette skyldes fixedpoint, og at en txt fil kun kan have integer værdier. Det har dog ingen indflydelse på resultaterne, da skaleringen er den samme. Ydermere er der også ændret i koden, så første værdi er 1 og ikke 0, mere om det emne i diskussionen. 
 \begin{figure}[H]
