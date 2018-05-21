@@ -19,14 +19,14 @@ Igennem processen af vores funktionalitet, sendes lydsignalet gennem en codec183
 
 DMA'en står for at sende dataen videre til Rx bufferen, når bufferen er fuld sender DMA'en interrupt til processeren om at procesere den modtagne data. \\
 I den modsatte retning bliver det proceserede data flyttet til Tx bufferen, når Tx bufferen er fuld, sendes det til SPORT0 via DMA'en med Ch 2.  
-Til sidst bliver dataen samplet gennem CODEC, som konverterer til til et analogt signal vha. en DAC.
-De forskellige blokke i strukturen fra figur \ref{fig:LMS_filter}, er implementeret i klassen Init. 
+Til sidst bliver dataen samplet gennem CODEC, som konverterer til et analogt signal vha. en DAC.
+De forskellige blokke i strukturen fra figur \ref{fig:LMS_filter}, er implementeret i Init.C. 
   
 
 \newpage
 
 \subsection{Software arkitektur}
-Til dette projekt har det været muligt at benytte et udleveret framework til Crosscore. Dette framework er lavet af Kim Bjerge, og er blevet modificeret af gruppen, til at virke med vores LMS filter. På \autoref{fig:Class diagram} kan man se hvilke klasser der er med og deres relationer til hinanden. 
+Til dette projekt har det været muligt at benytte et udleveret framework til Crosscore. Dette framework er lavet af Kim Bjerge, og er blevet modificeret af gruppen, til at virke med vores LMS filter. På \autoref{fig:Class diagram} kan man se hvilke klasser der er med i projektet og deres relationer til hinanden. 
 
 
 \begin{figure}[H]
@@ -36,7 +36,11 @@ Til dette projekt har det været muligt at benytte et udleveret framework til Cr
 	\label{fig:Class diagram}
 \end{figure}
 
-Arkitekturen består af en abstrakt klasse FilterAlgo som har to funktioner, process() og create(). Disse to nedarves af LMSFilter klassen og implementeres heri. Create() bliver kaldt først i main og nulstiller alle koefficienter, udover den første som bliver sat til 1. Grunden til dette er for at få det fulde støjsignal igennem første gang filteret kører. Dette vil blive uddybet mere i diskusion afsnittet. process() funktionen står for at filtrere uønsket støj fra tale signalet(d(n)). Koden er lavet så den følger vores matlab model så godt som overhovedet muligt. Dette kan også ses i \autoref{code:LMSFilter}
+Arkitekturen består af en abstrakt klasse FilterAlgo som har to virtuelle funktioner, process() og create(). Disse to nedarves af LMSFilter klassen og implementeres heri. Create() opretter filteret og nulstiller alle koefficienter, udover den første filter-koefficient, som bliver sat til 1. Grunden til dette er for at få det fulde støjsignal igennem første gang filteret kører. Dette vil blive uddybet mere i diskusion afsnittet. process() funktionen står for at filtrere uønsket støj fra tale signalet(d(n)). Koden er lavet så den følger vores matlab model så godt som overhovedet muligt. 
+
+Vi har valgt ikke at implementere controller klassen, da vores 1. prioritet har været at få et fungerende LMS filter. Derfor står den som "NOT IMPLEMENTED". Istedet for at brugeren kan tænde for filteret med en switch, har vi valgt at lade filteret være aktiv så snart man starter programmet. 
+
+
 
 \newpage
 
@@ -67,8 +71,7 @@ for(short i = 0; i < len; i++)
 	}
 }
 \end{lstlisting}
-\label{code:LMSFilter}
+
+Koden ovenfor består af tre for-løkker. Den yderste løkke særger for at køre længden af signalet igennem. Løkken i linje 5, filtrere støjen så vi får vores støjsignal y(n). Dette støjsignal trækkes fra vores talesignal hvilket efterlader vores ønsket talesignal uden støj. Den sidste løkke på linje 17, opdaterer filter-koefficienterne så de hele tiden passer til støjen.
 
 For at forsimple koden har vi valgt at splitte vores stereo kanal op i to, så det er muligt at få støjsignalet(x(n)) ind på højre kanal og tale signal(d(n)) ind på venstre kanal.
-
-Vi har valgt ikke at implementere controller klassen, da vores 1. prioritet har været at få et fungerende LMS filter. Derfor står den som "NOT IMPLEMENTED". Istedet for at brugeren kan tænde for filteret med en switch, har vi valgt at lade filteret være aktiv så snart man starter programmet. 
