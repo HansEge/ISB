@@ -26,8 +26,44 @@ En anden grund kan også være at vores timing ikke har været god nok mellem st
 \item [Bedst udenfor 300-3400 Hz.] Vi fandt også ud af gennem projektet at LMS filteret fungerer bedst hvis det støjende signal (x(n)) og det ønskede signal (e(n)) ligger i forskellige frekvenser. Dette ses af figur \ref{fig:Filter_food}, hvor vi har et tale signal, som normalt ligger imellem 300-3400 Hz, sammensat af et food processor som støjer på et meget bredt spektrum. Det ses at filteret skaber et gain af støjen som er hensigten, når vi kommer over 3400 Hz. Dette betyder også at filteret kommer til at filtrere talesignalet, da de ligger inden for samme frekvensbånd. Dog har vi gennem projektet set at en ren sinus tone, godt kan filtreres fra selvom den ligger inderfor tale båndet. Dette skyldes højst sandsanligt at tonen er så kraftig at filteret negligere talesignalet. \\
 Hvis der var uendelig processorkraft, kunne vi måske bruge krydskorralation, lave et krydskorralation på hver frekvens med støjen og derved finde peak hvor signalet og støjen korrelerer. Dette er dog ikke muligt på blackfin, da det vil bruge meget processorkraft, og memory, da hele støjsignalet ville skulle "krydses" med hele det oprindelige signal, for hver sample. 
 \item [Ikke-funktionelle krav.]
-\item [Løsning i sidste time] 
-\item [Læringsmål] 
+\item [Løsning i sidste time.] Da vi stort set var færdige med rapport og kode, fandt vi en fejl i blackfin implementeringen, som forklarede og løste problemet med "klik" lydene som tidligere nævnt. 
+Vi så ikke fejlen, når vi blot testede med 1024, da fejlen ligger når vi tage 2,3,4.... blok af 1024 samples. Dette betyder at at vi i den tidligere kode negligerede de første 32 samples, pga funktionens if løkker. I den nye implementering, har vi derved oprettet en ny buffer som gemmer de gamle koefficienter, så de kan bruges når en ny blok af 1024 samples kommer til det første loop. Vi sikre af vi peger det rigtige sted i bufferen, ved at sikre at hvis idxNew komemr under 0, sætter vi idxNew til NUM\_WEIGTHS-1 for at flippe pege pointeren op til det forrige værdi for filteret. Den nye kode kan ses herunder. Dette er en udkast til implementering, og derfor skal der også sættes tid af til at optimere koden. Vi testede herefter og fandt at "klik" lydene forsvandt. \\
+\begin{lstlisting}
+for(short i = 0; i < len; i++)
+	{
+
+		delay[idx] = x[i];
+		idxNew = idx;
+		if (++idx >= NUM_WEIGTHS) idx = 0;
+
+		long fract yn = 0;
+
+		for(short j = 0; j < NUM_WEIGTHS; j++)
+		{
+			//if(i > j)
+			//{
+				yn = yn + Filter.W[j]*delay[idxNew];
+				if (--idxNew < 0) idxNew = NUM_WEIGTHS-1;
+			//}
+		}
+		y[i] = (fract)yn;
+		e[i] = d[i] - yn;
+
+		long fract tmp_W = 0;
+
+		for(short k = 0; k < NUM_WEIGTHS; k++)
+		{
+			if(i > k)
+			{
+				Filter.W[k] = Filter.W[k]  + my*x[i-k]*e[i];
+
+			}
+		}
+	}
+\end{lstlisting}
+
+\item [Læringsmål.] Projektet er opbygget og leder kraftig op til læringsmålene for faget. Igennem dette projekt har vi derved undersøgt og arbejdet med hardware arkitektturen på DSP'en, dette vises og forklares gennem Struktur afsnittet. En real tids konfiguration er blevet lavet og testet gennem dette projekt, og endda til en vis grad opfyldt real tids implementeringen. Herunderover har vi udviklet og gennemarbejdet et filter som gør brug af en algoritme, herigennem LMS algoritmen, som kan ses under Teori afsnittet. Vi har ikke set meget på strømforbruget og optimering igennem dette projekt, da det ikke har været det essentielle for lige præcis dette projekt. Det vil dog kunne tages op ved efterarbejde.    
+
 
 \end{description}
 
