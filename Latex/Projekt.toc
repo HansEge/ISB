@@ -24,4 +24,4 @@
 \contentsline {subsubsection}{\numberline {9.2.2}Visuel test}{19}{subsubsection.9.2.2}
 \contentsline {subsubsection}{\numberline {9.2.3}Audio Test}{22}{subsubsection.9.2.3}
 \contentsline {section}{\numberline {10}Diskussion}{23}{section.10}
-\contentsline {section}{\numberline {11}Konklussion}{26}{section.11}
+\contentsline {section}{\numberline {11}Konklussion}{27}{section.11}
