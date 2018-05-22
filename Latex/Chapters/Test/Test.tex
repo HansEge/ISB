@@ -37,7 +37,9 @@ Igennem genereringen af filteret laves der 3 forloop. Et som kører hver sample 
 De nye filter koefficienter bliver herved opdateret til det ønskede filter, hvor e(n) bliver fejlen ift figur \ref{fig:LMS_filter}, som er det talesignal der ønskes. \\
 Koden er bygget op sådan at vi kører en fixed16() og fixed32(), for at simulere det bedst muligt ift blackfin. Fixed16 svarer til fixed point 1.15 og fixed32 til fixed point 1.31. 
 \\
-Dette giver os et filter som fungerer efter hensigten. Først testes der med 3 sinus toner, som ligger indover et tale signal, disse 3 toner skal derved gerne blive filtreret gennem filteret. 
+Dette giver os et filter som fungerer efter hensigten. Først testes der med 3 sinus toner, som ligger indover et tale signal, disse 3 toner skal derved gerne blive filtreret gennem filteret.
+
+ 
 \newpage
 \subsubsection{Første test}
 Den første test der blev udført var så simpel som mulig. I forsøget generes et talesignal med 3 sinustoner indover. 

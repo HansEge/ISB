@@ -75,3 +75,12 @@ for(short i = 0; i < len; i++)
 Koden ovenfor består af tre for-løkker. Den yderste løkke særger for at køre længden af signalet igennem. Løkken i linje 5, filtrere støjen så vi får vores støjsignal y(n). Dette støjsignal trækkes fra vores talesignal hvilket efterlader vores ønsket talesignal uden støj. Den sidste løkke på linje 17, opdaterer filter-koefficienterne så de hele tiden passer til støjen.
 
 For at forsimple koden har vi valgt at splitte vores stereo kanal op i to, så det er muligt at få støjsignalet(x(n)) ind på højre kanal og tale signal(d(n)) ind på venstre kanal.
+
+På sekvensdiagrammet nedenunder, kan man se hvordan koden køres igennem når filteret aktiveres. Process kører så længe systemet er aktivt, filtrerer uønsket støj fra og sender filtreret samples videre ud i systemet kontinuert.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 400pt]{Img/SD_filter_active.png}
+	\caption{SD filter startes}
+	\label{fig:SD}
+\end{figure}
