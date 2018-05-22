@@ -1,0 +1,17 @@
+\babel@toc {danish}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Konceptbillede for NSS}}{3}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Akt\IeC {\o }r Kontekst diagram}}{4}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Usecase diagram}}{5}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces LMS adaptive filter}}{7}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Struktur NSS}}{8}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Klassediagram over NSS}}{9}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces SD filter startes}}{11}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces LMS filter i tid (3 sinus toner)}}{13}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces LMS filter i frekvens (3 sinus toner)}}{14}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces LMS filter(3 sinus toner)}}{15}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces LMS filter i tid (food processor)}}{16}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces LMS filter i frekvens (food processor)}}{17}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces LMS filter(food processor)}}{18}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces LMS filter implementeret p\IeC {\r a} Blackfin}}{19}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Simulering af figur \ref {fig:Blackfin} i matlab}}{20}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Fejl fra matlab filter}}{21}{figure.16}
