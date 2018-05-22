@@ -10,17 +10,17 @@
 \contentsline {subsection}{\numberline {5.1}Problemrelateret krav}{6}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}System og algoritme krav}{6}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Afledte krav}{6}{subsection.5.3}
-\contentsline {section}{\numberline {6}Acceptest}{6}{section.6}
-\contentsline {section}{\numberline {7}Struktur}{7}{section.7}
-\contentsline {subsection}{\numberline {7.1}BlackFin blokforklaring}{7}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Software arkitektur}{8}{subsection.7.2}
-\contentsline {section}{\numberline {8}Teori}{11}{section.8}
-\contentsline {section}{\numberline {9}Test}{12}{section.9}
-\contentsline {subsection}{\numberline {9.1}Matlab simulering}{12}{subsection.9.1}
-\contentsline {subsubsection}{\numberline {9.1.1}F\IeC {\o }rste test}{13}{subsubsection.9.1.1}
-\contentsline {subsubsection}{\numberline {9.1.2}Anden test}{16}{subsubsection.9.1.2}
-\contentsline {subsection}{\numberline {9.2}Cross-core}{18}{subsection.9.2}
-\contentsline {subsubsection}{\numberline {9.2.1}Overordnet}{18}{subsubsection.9.2.1}
-\contentsline {subsubsection}{\numberline {9.2.2}Visuel test}{18}{subsubsection.9.2.2}
-\contentsline {subsubsection}{\numberline {9.2.3}Audio Test}{21}{subsubsection.9.2.3}
-\contentsline {section}{\numberline {10}Diskussion}{22}{section.10}
+\contentsline {section}{\numberline {6}Acceptest}{7}{section.6}
+\contentsline {section}{\numberline {7}Teori}{8}{section.7}
+\contentsline {section}{\numberline {8}Struktur}{9}{section.8}
+\contentsline {subsection}{\numberline {8.1}BlackFin blokforklaring}{9}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Software arkitektur}{10}{subsection.8.2}
+\contentsline {section}{\numberline {9}Test}{13}{section.9}
+\contentsline {subsection}{\numberline {9.1}Matlab simulering}{13}{subsection.9.1}
+\contentsline {subsubsection}{\numberline {9.1.1}F\IeC {\o }rste test}{14}{subsubsection.9.1.1}
+\contentsline {subsubsection}{\numberline {9.1.2}Anden test}{17}{subsubsection.9.1.2}
+\contentsline {subsection}{\numberline {9.2}Cross-core}{19}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Overordnet}{19}{subsubsection.9.2.1}
+\contentsline {subsubsection}{\numberline {9.2.2}Visuel test}{19}{subsubsection.9.2.2}
+\contentsline {subsubsection}{\numberline {9.2.3}Audio Test}{22}{subsubsection.9.2.3}
+\contentsline {section}{\numberline {10}Diskussion}{23}{section.10}

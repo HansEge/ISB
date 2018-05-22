@@ -10,10 +10,10 @@
 \BOOKMARK [2][-]{subsection.5.2}{System og algoritme krav}{section.5}% 10
 \BOOKMARK [2][-]{subsection.5.3}{Afledte krav}{section.5}% 11
 \BOOKMARK [1][-]{section.6}{Acceptest}{}% 12
-\BOOKMARK [1][-]{section.7}{Struktur}{}% 13
-\BOOKMARK [2][-]{subsection.7.1}{BlackFin blokforklaring}{section.7}% 14
-\BOOKMARK [2][-]{subsection.7.2}{Software arkitektur}{section.7}% 15
-\BOOKMARK [1][-]{section.8}{Teori}{}% 16
+\BOOKMARK [1][-]{section.7}{Teori}{}% 13
+\BOOKMARK [1][-]{section.8}{Struktur}{}% 14
+\BOOKMARK [2][-]{subsection.8.1}{BlackFin blokforklaring}{section.8}% 15
+\BOOKMARK [2][-]{subsection.8.2}{Software arkitektur}{section.8}% 16
 \BOOKMARK [1][-]{section.9}{Test}{}% 17
 \BOOKMARK [2][-]{subsection.9.1}{Matlab simulering}{section.9}% 18
 \BOOKMARK [3][-]{subsubsection.9.1.1}{F\370rste test}{subsection.9.1}% 19
