@@ -33,10 +33,8 @@ System og algoritme kravene er alle opfyldt eller inden for den valgte grænse. 
 
 Tilsidst er der nogle afledte krav, der er lavet på bagrund af problemrelateret krav og system og algoritme kravene. DR3(Filter latency må max forsinkes 1280 samples(på baggrund af R6.(1/44100)*1280=30ms) er inden for grænsen. Dette skyldes antallet af filter koefficienter, som er sat til 32. Dette betyder at signalet max forsinkes 32 samples, hvilket vil sige at der er en latency på 6.6ms. 
 
-
-
 \item [Løsning i sidste time.] Da vi stort set var færdige med rapport og kode, fandt vi en fejl i blackfin implementeringen, som forklarede og løste problemet med "klik" lydene som tidligere nævnt. 
-Vi så ikke fejlen, når vi blot testede med 1024, da fejlen ligger når vi tage 2,3,4.... blok af 1024 samples. Dette betyder at at vi i den tidligere kode negligerede de første 32 samples, pga funktionens if løkker. I den nye implementering, har vi derved oprettet en ny buffer som gemmer de gamle koefficienter, så de kan bruges når en ny blok af 1024 samples kommer til det første loop. Vi sikre af vi peger det rigtige sted i bufferen, ved at sikre at hvis idxNew komemr under 0, sætter vi idxNew til NUM\_WEIGTHS-1 for at flippe pege pointeren op til det forrige værdi for filteret. Den nye kode kan ses herunder. Dette er en udkast til implementering, og derfor skal der også sættes tid af til at optimere koden. Vi testede herefter og fandt at "klik" lydene forsvandt. \\
+Vi så ikke fejlen, når vi blot testede med 1024 samples, da fejlen ligger når vi tage 2,3,4.... blok af 1024 samples. Dette betyder at at vi i den tidligere kode negligerede de første 32 samples, pga funktionens if løkker. I den nye implementering, har vi derved oprettet en ny buffer som gemmer de gamle koefficienter, så de kan bruges når en ny blok af 1024 samples kommer til det første loop. Vi sikrer at vi peger det rigtige sted i bufferen, ved at sørge for, at hvis idxNew kommer under 0, sætter vi idxNew til NUM\_WEIGTHS-1, for at flippe pege pointeren op til det forrige værdi for filteret. Den nye kode kan ses herunder. Dette er et udkast til implementering, og derfor skal der også sættes tid af til at optimere koden. Vi testede herefter og fandt at "klik" lydene forsvandt. \\
 \begin{lstlisting}
 for(short i = 0; i < len; i++)
 	{
